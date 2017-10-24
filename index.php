@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
+	<title>ZENO GUI</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" href="Uncertainty.ico">
+</head>
+<body>
+	<h3>Zeno Gui</h3>
+
+
+	<div id="form">
+		<form name="input" id="input"  method="POST" action="validation.php" target="_blank"  >
+
+
+			<fieldset  class="bodGroup" >
+				<legend>Required inputs</legend>
+					<div id="load">
+						<div id="drop_zone">Drop Obj file here or click to upload</div>
+						<input type='file' title="No file selected" id="files" onchange="pressed()"><label id="fileLabel"> </label>
+					</div>
+
+
+					<div id="bodArea">
+						Definition of object file:
+						<br/>
+						<textarea class='output'  name='output1' id='output1' height=51px ></textarea>
+						<br/>
+						<button id='displayButton' type="button" onclick=drawDisplay()>Update Object</button>
+					</div>
+
+
+				<div id="container">
+					<div id="container-01" class="mol-container"></div>
+				</div>
+
+
+					<div id="Exterior">
+						<br/>
+
+						Exterior calculation:
+						<div>
+							<input type="radio" name="extRad" value="nbWalk" id="nbWalk" checked="checked"/>
+							<label for="nbWalk">Number of exterior walks</label>
+							<div class="sub1">
+								<input name='nbWalk' id='nbWalk' type='text' value='1000000'  >
+							</div>
+						</div>
+						<div>
+							<input type="radio" name="extRad" value="sdCap" id="sdCap"/>
+							<label for="sdCap">Maximum relative standard deviation of capacitance</label>
+							<div class="sub1">
+								<input name='sdCap' id='sdCap' type='text' value='0.1'  >
+							</div>
+						</div>
+						<div>
+							<input type="radio" name="extRad" value="sdPol" id="sdPol"/>
+							<label for="sdPol">Maximum relative standard deviation of electric polarixability</label>
+							<div class="sub1">
+								<input name='sdPol' id='sdPol' type='text' value='0.1'  >
+							</div>
+						</div>
+						<div>
+							<input type="radio" name="extRad" value="None" id="None" />
+							<label for="None">None</label>
+						</div>
+
+
+					<br/>
+
+					Interior calculation:
+					<div>
+						<input type="radio" name="intRad" value="nbSamples" id="nbSamples"/>
+						<label for="nbSamples">Number of interior samples</label>
+						<div class="sub1">
+							<input name='nbSamples' id='nbSamples' type='text' value='1000000'  >
+						</div>
+					</div>
+					<div>
+						<input type="radio" name="intRad" value="sdVol" id="sdVol"/>
+						<label for="sdVol">Maximum relative standard deviation of volume</label>
+						<div class="sub1">
+							<input name='sdVol' id='sdVol' type='text' value='0.1'  >
+						</div>
+					</div>
+					<div>
+						<input type="radio" name="intRad" value="None" id="None" checked="checked"/>
+						<label for="None">None</label>
+					</div>
+				</div>
+
+			</fieldset>
+
+			<fieldset  class="optGroup" >
+				<legend onclick="toggleParam();" style="cursor: pointer;">Optional inputs</legend>
+				<table id="optionalParam" style="width:50%">
+
+					<tr>
+						<td class="tooltip">Random number generator seed:   	  </td>
+
+						<td><input name='seed' id='seed' type='text' value=''  ></td>
+						<td> </td>
+					</tr>
+					<tr>
+						<td  class="tooltip">Units for length: 		  <span class="tooltiptext">Choosing a conversion length of 10 cm means that a length of 1 (arbitrary units) in the input file is equivalent to 10cm. A non-arbitrary value is required for calculation of friction coefficien, diffusion coefficient and sedimentation coefficient</span> </td>
+						<td><input name='hunits' id='hunits' type='text' value='1'   ></td>
+						<td><select id="hunitsType" name="hunitsType">
+							<option value="L" selected> L (generic)</option>
+							<option value="m"> m (meters)</option>
+							<option value="cm"> cm (centimeters)</option>
+							<option value="nm"> nm (nanometers)</option>
+							<option value="A"> A (Angstroms)</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td class="tooltip">Custom launch radius:   </td>
+						<td><input name='rlaunch' id='rlaunch' type='text' value=''  ></td>
+						<td> </td>
+					</tr>
+					<tr>
+						<td class="tooltip">Custom skin thickness:  	 </td>
+						<td><input name='skinT' id='skinT' type='text' value=''  ></td>
+						<td> </td>
+					</tr>
+					<tr>
+						<td class="tooltip">Temperature:	  <span class="tooltiptext">Required for calculation of the diffusion coefficient</span> </td>
+						<td><input name='temp' id='temp' type='text' value=''  ></td>
+						<td><select id="tempType" name="tempType">
+							<option value="C" selected> C (Celsius)</option>
+							<option value="K"> K (Kelvin)</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tooltip">Mass:	  <span class="tooltiptext">Required for calculation of the intrinsic viscosity with mass units and the sedimentation coefficient </span> </td>
+					<td><input name='mass' id='mass' type='text' value=''  ></td>
+					<td><select id="massType" name="massType">
+						<option value="Da" selected> Da (Daltons)</option>
+						<option value="kDa"> kDa (kiloDaltons)</option>
+						<option value="g"> g (grams)</option>
+						<option value="kg"> kg (kilograms)</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="tooltip">Solvent Viscosity:	  <span class="tooltiptext">Required for calculation of the friction coefficient, the diffusion coefficient and the sedimentation coefficient </span> </td>
+				<td><input name='viscosity' id='viscosity' type='text' value=''  ></td>
+				<td><select id="viscosityType" name="viscosityType">
+					<option value="p" selected> poise </option>
+					<option value="cp"> centipoise</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="tooltip">Bouyancy factor:  	  <span class="tooltiptext">Required for calculation of the sedimentation coefficient </span> </td>
+			<td><input name='bouyancy' id='bouyancy' type='text' value=''  ></td>
+			<td> </td>
+		</tr>
+		</table>
+
+
+
+	</fieldset>
+
+
+	<br/>
+
+
+
+	<input type="submit" value="Run the computation"/>
+	<div id="state"></div>
+	<span id='error'></span>
+	<span id='percent'></span><br/>
+</form>
+</div>
+<script src="library/jquery.js"></script>
+<script src="library/3Dmol-min.js"></script>
+<script src="script.js"></script>
+
+
+<footer id="footer">
+	<p>This software was developed at NIST. This software is not subject to copyright protection and is
+		in the public domain. This software is an experimental system. NIST assumes
+		no responsibility whatsoever for its use by other parties, and makes no
+		guarantees, expressed or implied, about its quality, reliability, or
+		any other characteristic. We would appreciate acknowledgement if the
+		software is used.
+		<br/>
+		Version 0.1.0
+	</p>
+</footer>
+
+</body>
+</html>

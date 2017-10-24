@@ -1,0 +1,201 @@
+/* Css Reset ==================================== */
+html, body, div, img, p, table, thead, tbody, tfoot, tr,td,tt, h1,h2,h3,h4,h5,h6, a, span, fieldset  {
+	padding:00;
+	border:00;
+	outline:none;
+}
+
+
+
+body {
+	font-family: 'Lato', Times, 'Times New Roman', serif;
+	font-size: 16px;
+	font-weight: 200;
+	margin-left:1cm;
+	margin-right:1cm;
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f2f2f2;
+}
+
+h3{
+	font-size: 28px;
+	margin-left:2cm;
+}
+
+
+
+legend {margin-left:20px;}
+fieldset {border:2px solid #bbb;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	padding:15px;
+	padding-top:5px;
+	background-color: #ddd;
+
+}
+#form{ width: 100%; }
+
+
+input[type=text], select {
+    margin: 8px 0;
+		padding: 5px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+#instruction { width: 50% ;}
+#load{ width: 50%; float: right;}
+#bodArea{ width: 50%; float: left}
+#Interior{ width: 50%; float: left}
+#Exterior{ width: 50%; float: left}
+
+.mol-container {
+	height:100%;
+  position: relative;
+}
+#container{
+		width: 50%;
+ 		float: right;
+		height:2em;
+}
+
+
+input[type=file]{
+	width:0px;
+	color:transparent;
+	visibility:hidden;
+}
+#drop_zone{
+	margin-top:20px;
+	border:2px dashed ;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	padding:15px;
+	width: 15em;
+	text-align:center;font: 20pt bold 'Vollkorn';
+	cursor: pointer;
+	background-color: #bbb;
+}
+#fileLabel{
+	visibility: hidden;
+}
+
+.output{
+	width: 35vw;
+	height: 51px;
+	margin-left:5px;
+	margin-right:5px;
+	max-width:40vw;
+	min-height:4vw;
+}
+
+
+
+.sub1, .sub2 { display: none; }
+
+:checked ~ .sub1, :checked ~ .sub2 {
+	display: block;
+	margin-left: 40px;
+}
+
+
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+	  margin-top:0.5vw
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 30vw;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 10%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+.tooltip .tooltiptext {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+    opacity: 1;
+}
+
+
+#footer {
+	bottom:0;
+	float:bottom;
+	clear: left;
+	width:50%;
+	height:40px;   /* Height of the footer */
+
+	font-family: 'Lato', Times, 'Times New Roman', serif;
+	font-size: 10px;
+	font-weight: 200;
+	color: #555;
+	margin-left:10px;
+
+
+}
+
+@media screen and (max-width: 1024px) {
+	#instruction { width: 100% ;}
+	#load{ width: 100%;  }
+	#drop_zone{  margin-top:10px;width: 90%;}
+
+	#Exterior{ width: 100%; float: left}
+
+	.output{	max-width:80vw;width: 80vw;}
+	#container{	width: 100%;	float: left;	}
+
+
+}

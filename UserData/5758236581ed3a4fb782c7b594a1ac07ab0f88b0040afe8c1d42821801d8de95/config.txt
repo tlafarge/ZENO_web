@@ -1,0 +1,3 @@
+version=0.1
+seed=33
+nbWalk=1000000

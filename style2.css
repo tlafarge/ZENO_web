@@ -1,0 +1,140 @@
+/* Css Reset ==================================== */
+html, body, div, img, p, table, thead, tbody, tfoot, tr,td,tt, h1,h2,h3,h4,h5,h6, a, span, fieldset  {
+	margin:10;
+	padding:00;
+	border:00;
+	outline:none;
+}
+
+h3{
+	font-size: 28px;
+	margin-left:2cm;
+}
+body{
+	background-color: #e2e2e2;
+  max-width: 90%;
+	margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+div {
+    border-radius: 5px;
+    padding: 1px;
+}
+
+
+input[type=file]{
+	width:0px;
+	color:transparent;
+	visibility:hidden;
+}
+
+input[type=text], select {
+	padding: 5px 10px;
+	margin: 3px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	padding: 5px 20px;
+	cursor: pointer;
+}
+
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+
+img {
+	width: 100%;
+	height: auto;
+	max-width: 600px;
+}
+
+
+
+
+#instruction { width: 50% ;}
+#load{ width: 50%; float: right}
+
+#form{ width: 100%; }
+
+
+a:not(.image) {
+	color: hsl(120, 85%, 50%);
+	text-decoration: none;
+
+	-webkit-transition: color .15s ease;
+	-moz-transition: color .15s ease;
+	-ms-transition: color .15s ease;
+	-o-transition: color .15s ease;
+	transition: color .15s ease;
+}
+a:not(.image):hover {
+	text-decoration: underline;
+	text-shadow: none;
+	border: none;
+	border-radius: 2px;
+}
+
+#drop_zone{
+	margin-top:80px;
+	border:2px dashed #bbb;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	padding:15px;
+	width: 50%;
+	text-align:center;font: 20pt bold 'Vollkorn';
+	color:#bbb;
+	cursor: pointer;
+}
+
+.output{
+	width: 300px;
+	height: 51px;
+	margin-left:5px;
+	margin-right:5px;
+	max-width:40vw;
+}
+
+
+legend {margin-left:20px;}
+fieldset {border:2px solid #bbb;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	padding:15px;
+	padding-top:5px;
+	background-color: #f2f2f2;
+
+}
+
+
+.sub1, .sub2 { display: none; }
+
+:checked ~ .sub1, :checked ~ .sub2 {
+	display: block;
+	margin-left: 40px;
+}
+
+#footer {
+	bottom:0;
+	float:bottom;
+	clear: left;
+	width:50%;
+	height:40px;   /* Height of the footer */
+
+	font-family: 'Lato', Times, 'Times New Roman', serif;
+	font-size: 10px;
+	font-weight: 200;
+	color: #555;
+	margin-left:10px;
+
+
+}
