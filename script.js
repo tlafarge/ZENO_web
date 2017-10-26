@@ -15,6 +15,7 @@ var seed = Math.floor((Math.random() * 100) + 1);
 $('#seed').val(seed.toString());
 
 var viewer = null;
+var resultTab=3;
 
 
 
@@ -206,7 +207,7 @@ function drawDisplay()
     let config = { backgroundColor: 'white' };
 
     if(viewer == null)
-     viewer = $3Dmol.createViewer( element, config );
+    viewer = $3Dmol.createViewer( element, config );
     else {
       viewer.clear();
     }
@@ -221,8 +222,8 @@ function drawDisplay()
     viewer.zoom(0.8, 200);
   }
   else {
-    if(viewer != null)     
-      viewer.clear();
+    if(viewer != null)
+    viewer.clear();
   }
 
   button.disabled = false;
@@ -232,5 +233,64 @@ function drawDisplay()
 
 function toggleParam()
 {
-  $('#optionalParam').toggle(200);
+  if($('#optParam').val() == "1")
+  {
+    $("#arrowDiv").attr('class', 'down');
+    $('#optionalParam').hide(200);
+    $('#optParam').val("0")
+  }else {
+    $("#arrowDiv").attr('class', 'up');
+    $('#optionalParam').show(200);
+    $('#optParam').val("1")
+  }
 }
+
+$( "#tabs" ).tabs();
+
+
+
+/* attach a submit handler to the form */
+$("#input").submit(function(event) {
+
+  /* stop form from submitting normally */
+  event.preventDefault();
+
+  /* get some values from elements on the page: */
+  var $form = $(this),
+  url = $form.attr('action');
+  dataString = $("#input").serialize();
+
+
+  /* Send the data using post */
+  var posting = $.post(url, {
+    data: dataString
+  });
+
+  /* Put the results in a div */
+  posting.done(function(data) {
+
+    var toInsert="<div id=\"tabs-"+resultTab+"\"></div>";
+    $('#tabs').append($(toInsert));
+
+
+    var toInsert=" <li><a href='#tabs-"+resultTab+"'>results "+(resultTab-2)+"</a><span class='ui-closable-tab'>&#10006;</span></li> ";
+    $('#tabsul').append($(toInsert));
+
+    $( "#tabs" ).tabs("refresh");
+    $(function() {
+      $(".ui-closable-tab").on( "click", function() {
+        var tabContainerDiv=$(this).closest(".ui-tabs").attr("id");
+        var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
+        $( "#" + panelId ).remove();
+        $("#"+tabContainerDiv).tabs("refresh");
+
+      });
+    });
+
+
+    $("#tabs-"+resultTab).empty().append($(data));
+    $("#tabs").tabs("option", "active", $(".ui-tabs-nav").children().size() - 1);
+
+    resultTab = resultTab+1;
+  });
+});

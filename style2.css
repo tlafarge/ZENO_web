@@ -10,19 +10,30 @@ h3{
 	font-size: 28px;
 	margin-left:2cm;
 }
-body{
-	background-color: #e2e2e2;
-  max-width: 90%;
+
+body {
+	font-family: 'Lato', Times, 'Times New Roman', serif;
+	font-size: 16px;
+	font-weight: 200;
+	color: #eee;
+	margin-left:1cm;
+	margin-right:1cm;
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM1NTVhNWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMWMxZTIwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background-color: #2b2b2b;
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(85,90,95,1) 0%, rgba(28,30,32,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(85,90,95,1)), color-stop(100%,rgba(28,30,32,1)));
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(85,90,95,1) 0%,rgba(28,30,32,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover,  rgba(85,90,95,1) 0%,rgba(28,30,32,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(85,90,95,1) 0%,rgba(28,30,32,1) 100%);
+	background: radial-gradient(center, ellipse cover,  rgba(85,90,95,1) 0%,rgba(28,30,32,1) 100%);
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+
+	max-width: 90%;
 	margin-left: auto;
-  margin-right: auto;
-
+	margin-right: auto;
 }
 
-
-div {
-    border-radius: 5px;
-    padding: 1px;
-}
 
 
 input[type=file]{
@@ -60,7 +71,24 @@ img {
 
 
 #instruction { width: 50% ;}
-#load{ width: 50%; float: right}
+
+#load{ width: 50%; float: right;}
+#bodArea{ width: 50%; float: left}
+
+#Interior{ width: 50%; float: left}
+#Exterior{ width: 50%; float: left}
+
+.mol-container {
+
+	height:100%;
+  position: relative;
+}
+#container{
+		width: 50%;
+ 		float: right;
+		height:2em;
+}
+
 
 #form{ width: 100%; }
 
@@ -83,24 +111,26 @@ a:not(.image):hover {
 }
 
 #drop_zone{
-	margin-top:80px;
+	margin-top:20px;
 	border:2px dashed #bbb;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
 	padding:15px;
-	width: 50%;
+	width: 15em;
 	text-align:center;font: 20pt bold 'Vollkorn';
 	color:#bbb;
 	cursor: pointer;
+	background-color: #303030;
 }
 
 .output{
-	width: 300px;
+	width: 35vw;
 	height: 51px;
 	margin-left:5px;
 	margin-right:5px;
 	max-width:40vw;
+	min-height:4vw;
 }
 
 
@@ -111,8 +141,7 @@ fieldset {border:2px solid #bbb;
 	border-radius:5px;
 	padding:15px;
 	padding-top:5px;
-	background-color: #f2f2f2;
-
+	background-color: #404040;
 }
 
 
@@ -133,8 +162,21 @@ fieldset {border:2px solid #bbb;
 	font-family: 'Lato', Times, 'Times New Roman', serif;
 	font-size: 10px;
 	font-weight: 200;
-	color: #555;
+	color: #A3A3A3;
 	margin-left:10px;
+
+
+}
+
+@media screen and (max-width: 1024px) {
+	#instruction { width: 100% ;}
+	#load{ width: 100%;  }
+	#drop_zone{  margin-top:10px;width: 90%;}
+
+	#Exterior{ width: 100%; float: left}
+
+	.output{	max-width:80vw;width: 80vw;}
+	#container{	width: 100%;	float: left;	}
 
 
 }

@@ -33,7 +33,6 @@ fieldset {border:2px solid #bbb;
 	border-radius:5px;
 	padding:15px;
 	padding-top:5px;
-	background-color: #ddd;
 
 }
 #form{ width: 100%; }
@@ -81,7 +80,7 @@ input[type=file]{
 	width: 15em;
 	text-align:center;font: 20pt bold 'Vollkorn';
 	cursor: pointer;
-	background-color: #bbb;
+	background-color: #ddd;
 }
 #fileLabel{
 	visibility: hidden;
@@ -170,6 +169,27 @@ input[type=submit]:hover {
     opacity: 1;
 }
 
+
+arrowDiv {
+  border: solid black;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 3px;
+	margin-left: 8px;
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.ui-closable-tab{
+	cursor: pointer;
+}
 
 #footer {
 	bottom:0;
