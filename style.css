@@ -24,7 +24,11 @@ h3{
 	margin-left:2cm;
 }
 
+#tabs{
+	display: none;
+	min-width: 20em;
 
+}
 
 legend {margin-left:20px;}
 fieldset {border:2px solid #bbb;
@@ -33,6 +37,8 @@ fieldset {border:2px solid #bbb;
 	border-radius:5px;
 	padding:15px;
 	padding-top:5px;
+	min-width: 15em;
+
 
 }
 #form{ width: 100%; }
@@ -88,11 +94,11 @@ input[type=file]{
 
 .output{
 	width: 35vw;
-	height: 51px;
+	height: 71px;
 	margin-left:5px;
 	margin-right:5px;
 	max-width:40vw;
-	min-height:4vw;
+	min-height:71px;
 }
 
 
@@ -213,8 +219,8 @@ arrowDiv {
 	#drop_zone{  margin-top:10px;width: 90%;}
 
 	#Exterior{ width: 100%; float: left}
-
-	.output{	max-width:80vw;width: 80vw;}
+  #bodArea { width: 100%;}
+	.output{	max-width:80vw;width: 100%;}
 	#container{	width: 100%;	float: left;	}
 
 

@@ -18,121 +18,124 @@
 			<li><a href="#tabs-2">App</a></li>
 		</ul>
 		<div id="tabs-1">
-			<p>About</p>
-		</div>
-		<div id="tabs-2">
-			<div id="form">
-				<form name="input" id="input"   action="validation.php"   >
+			<p>The ZENO software tool computes material, solution, and suspension
+				properties for a specified particle shape or molecular structure using
+				path-integral and Monte Carlo methods. These properties include:
+				capacitance, electric polarizability tensor, intrinsic conductivity,
+				volume, gyration tensor, hydrodynamic radius, intrinsic viscosity, friction
+				coefficient, diffusion coefficient, sedimentation coefficient, and related quantities.</p>
+			</div>
+			<div id="tabs-2">
+				<div id="form">
+					<form name="input" id="input"   action="validation.php"   >
 
-					<fieldset  class="bodGroup" >
-						<legend>Required inputs</legend>
-						<div id="load">
-							<div id="drop_zone">Drop Obj file here or click to upload</div>
-							<input type='file' title="No file selected" id="files" onchange="pressed()"><label id="fileLabel"> </label>
-						</div>
-
-
-						<div id="bodArea">
-							Definition of object file:
-							<br/>
-							<textarea class='output'  name='output1' id='output1' height=51px ></textarea>
-							<br/>
-							<button id='displayButton' type="button" onclick=drawDisplay()>Update Object</button>
-						</div>
+						<fieldset  class="bodGroup" >
+							<legend>Required inputs</legend>
+							<div id="load">
+								<div id="drop_zone">Drop Obj file here or click to upload</div>
+								<input type='file' title="No file selected" id="files" onchange="pressed()"><label id="fileLabel"> </label>
+							</div>
 
 
-						<div id="container">
-							<div id="container-01" class="mol-container"></div>
-						</div>
+							<div id="bodArea">
+								Definition of object file:
+								<br/>
+								<textarea class='output'  name='output1' id='output1' height=51px ></textarea>
+								<br/>
+								<button id='displayButton' type="button" onclick=drawDisplay()>Update Object</button>
+							</div>
 
 
-						<div id="Exterior">
-							<br/>
+							<div id="container">
+								<div id="container-01" class="mol-container"></div>
+							</div>
 
-							Exterior calculation:
-							<div>
-								<input type="radio" name="extRad" value="nbWalk" id="nbWalk" checked="checked"/>
-								<label for="nbWalk">Number of exterior walks</label>
-								<div class="sub1">
-									<input name='nbWalk' id='nbWalk' type='text' value='1000000'  >
+
+							<div id="Exterior">
+								<br/>
+
+								Exterior calculation:
+								<div>
+									<input type="radio" name="extRad" value="nbWalk" id="nbWalk" checked="checked"/>
+									<label for="nbWalk">Number of exterior walks</label>
+									<div class="sub1">
+										<input name='nbWalk' id='nbWalk' type='text' value='1000000'  >
+									</div>
+								</div>
+								<div>
+									<input type="radio" name="extRad" value="sdCap" id="sdCap"/>
+									<label for="sdCap">Maximum relative standard deviation of capacitance</label>
+									<div class="sub1">
+										<input name='sdCap' id='sdCap' type='text' value='0.1'  >
+										<br/>
+										<label for="minNbWalkCap">Minimum number of exterior walks</label>
+										<br/>
+										<input name='minNbWalkCap' id='minNbWalkCap' type='text' value='1000'  >
+									</div>
+								</div>
+								<div>
+									<input type="radio" name="extRad" value="sdPol" id="sdPol"/>
+									<label for="sdPol">Maximum relative standard deviation of electric polarixability</label>
+									<div class="sub1">
+										<input name='sdPol' id='sdPol' type='text' value='0.1'  >
+										<br/>
+										<label for="minNbWalkPol">Minimum number of exterior walks</label>
+										<br/>
+										<input name='minNbWalkPol' id='minNbWalkPol' type='text' value='1000'  >
+									</div>
+								</div>
+								<div>
+									<input type="radio" name="extRad" value="None" id="None" />
+									<label for="None">None</label>
+								</div>
+
+
+								<br/>
+
+								Interior calculation:
+								<div>
+									<input type="radio" name="intRad" value="nbSamples" id="nbSamples"/>
+									<label for="nbSamples">Number of interior samples</label>
+									<div class="sub1">
+										<input name='nbSamples' id='nbSamples' type='text' value='1000000'  >
+									</div>
+								</div>
+								<div>
+									<input type="radio" name="intRad" value="sdVol" id="sdVol"/>
+									<label for="sdVol">Maximum relative standard deviation of volume</label>
+									<div class="sub1">
+										<input name='sdVol' id='sdVol' type='text' value='0.1'  >
+										<br/>
+										<label for="minNbSample">Minimum number of exterior walks</label>
+										<br/>
+										<input name='minNbSample' id='minNbSample' type='text' value='1000' >
+									</div>
+								</div>
+								<div>
+									<input type="radio" name="intRad" value="None" id="None" checked="checked"/>
+									<label for="None">None</label>
 								</div>
 							</div>
-							<div>
-								<input type="radio" name="extRad" value="sdCap" id="sdCap"/>
-								<label for="sdCap">Maximum relative standard deviation of capacitance</label>
-								<div class="sub1">
-									<input name='sdCap' id='sdCap' type='text' value='0.1'  >
-								</div>
-							</div>
-							<div>
-								<input type="radio" name="extRad" value="sdPol" id="sdPol"/>
-								<label for="sdPol">Maximum relative standard deviation of electric polarixability</label>
-								<div class="sub1">
-									<input name='sdPol' id='sdPol' type='text' value='0.1'  >
-								</div>
-							</div>
-							<div>
-								<input type="radio" name="extRad" value="None" id="None" />
-								<label for="None">None</label>
-							</div>
 
+						</fieldset>
 
-							<br/>
-
-							Interior calculation:
-							<div>
-								<input type="radio" name="intRad" value="nbSamples" id="nbSamples"/>
-								<label for="nbSamples">Number of interior samples</label>
-								<div class="sub1">
-									<input name='nbSamples' id='nbSamples' type='text' value='1000000'  >
-								</div>
-							</div>
-							<div>
-								<input type="radio" name="intRad" value="sdVol" id="sdVol"/>
-								<label for="sdVol">Maximum relative standard deviation of volume</label>
-								<div class="sub1">
-									<input name='sdVol' id='sdVol' type='text' value='0.1'  >
-								</div>
-							</div>
-							<div>
-								<input type="radio" name="intRad" value="None" id="None" checked="checked"/>
-								<label for="None">None</label>
-							</div>
-						</div>
-
-					</fieldset>
-
-					<fieldset  class="optGroup" >
-						<legend onclick="toggleParam();" style="cursor: pointer;">Optional inputs</legend>
-						<arrowDiv id="arrowDiv" onclick="toggleParam();" style="cursor: pointer;" class="down"></arrowDiv>
-						<table id="optionalParam" style="width:50%; display: none;">
-							<tr>
-								<td class="tooltip">Random number generator seed:   	  </td>
-
-								<td><input name='seed' id='seed' type='text' value=''  >					<input name='optParam' id='optParam' type='text' value='0' style=" display: none" ></td>
-								<td> </td>
-							</tr>
-							<tr>
-								<td  class="tooltip">Units for length: 		  <span class="tooltiptext">Choosing a conversion length of 10 cm means that a length of 1 (arbitrary units) in the input file is equivalent to 10cm. A non-arbitrary value is required for calculation of friction coefficien, diffusion coefficient and sedimentation coefficient</span> </td>
-								<td><input name='hunits' id='hunits' type='text' value='1'   ></td>
-								<td>
-									<select id="hunitsType" name="hunitsType">
-										<option value="L" selected> L (generic)</option>
-										<option value="m"> m (meters)</option>
-										<option value="cm"> cm (centimeters)</option>
-										<option value="nm"> nm (nanometers)</option>
-										<option value="A"> A (Angstroms)</option>
-									</select></td>
-								</tr>
+						<fieldset  class="optGroup" >
+							<legend onclick="toggleParam();" style="cursor: pointer;">Physical properties specifications</legend>
+							<arrowDiv id="arrowDiv" onclick="toggleParam();" style="cursor: pointer;" class="down"></arrowDiv>
+							<table id="optionalParam" style="width:50%; display: none;">
 								<tr>
-									<td class="tooltip">Custom launch radius:   </td>
-									<td><input name='rlaunch' id='rlaunch' type='text' value=''  ></td>
-									<td> </td>
-								</tr>
-								<tr>
-									<td class="tooltip">Custom skin thickness:  	 </td>
-									<td><input name='skinT' id='skinT' type='text' value=''  ></td>
-									<td> </td>
+									<td  class="tooltip">Units for length: 		  <span class="tooltiptext">Choosing a conversion length of 10 cm means that a length of 1 (arbitrary units) in the input file is equivalent to 10cm. A non-arbitrary value is required for calculation of friction coefficien, diffusion coefficient and sedimentation coefficient</span> </td>
+									<td><input name='hunits' id='hunits' type='text' value='1'   ></td>
+									<td>
+										<select id="hunitsType" name="hunitsType">
+											<option value="L" selected> L (generic)</option>
+											<option value="m"> m (meters)</option>
+											<option value="cm"> cm (centimeters)</option>
+											<option value="nm"> nm (nanometers)</option>
+											<option value="A"> A (Angstroms)</option>
+										</select>
+										<input name='optParam' id='optParam' type='text' value='0' style=" display: none" >
+									</td>
 								</tr>
 								<tr>
 									<td class="tooltip">Temperature:	  <span class="tooltiptext">Required for calculation of the diffusion coefficient</span> </td>
@@ -176,7 +179,42 @@
 
 
 						</fieldset>
+						<fieldset  class="advGroup" >
+							<legend onclick="toggleAdv();" style="cursor: pointer;">Advanced features</legend>
+							<arrowDiv id="arrowDiv2" onclick="toggleAdv();" style="cursor: pointer;" class="down"></arrowDiv>
+							<table id="advParam" style="width:50%; display: none;">
+								<tr>
+									<td class="tooltip">Random number generator seed:   	  </td>
 
+									<td><input name='seed' id='seed' type='text' value=''  >					<input name='advParamValue' id='advParamValue' type='text' value='0' style=" display: none" ></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td class="tooltip">Custom launch radius:   </td>
+									<td><input name='rlaunch' id='rlaunch' type='text' value=''  ></td>
+								</tr>
+								<tr>
+									<td class="tooltip">Custom skin thickness:  	 </td>
+									<td><input name='skinT' id='skinT' type='text' value=''  ></td>
+								</tr>
+								<tr>
+									<td><label><input type="checkbox"  name="hitPoints" id="hitPoints" value="1" /> Print statistics related to counts of hit points </label></td>
+								</tr>
+								<tr>
+									<td><label><input type="checkbox"  name="ram" id="ram" value="1" /> Print detailed RAM and timing information</label></td>
+								</tr>
+								<tr>
+									<td><label><input type="checkbox"  name="surfacePoints" id="surfacePoints" value="1" /> Print surface points from exterior calculations to a file</label></td>
+								</tr>
+								<tr>
+									<td><label><input type="checkbox"  name="interiorPoints" id="interiorPoints" value="1" /> Print interior sample points to a file</label></td>
+								</tr>
+
+							</table>
+
+
+
+						</fieldset>
 
 						<br/>
 

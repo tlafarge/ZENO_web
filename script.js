@@ -204,7 +204,7 @@ function drawDisplay()
     let element = $('#container-01');
     $('#container').css("height","25em");
 
-    let config = { backgroundColor: 'white' };
+    let config = { backgroundColor: '#f2f2f2' };
 
     if(viewer == null)
     viewer = $3Dmol.createViewer( element, config );
@@ -245,8 +245,22 @@ function toggleParam()
   }
 }
 
-$( "#tabs" ).tabs();
+function toggleAdv()
+{
+  if($('#advParamValue').val() == "1")
+  {
+    $("#arrowDiv2").attr('class', 'down');
+    $('#advParam').hide(200);
+    $('#advParamValue').val("0")
+  }else {
+    $("#arrowDiv2").attr('class', 'up');
+    $('#advParam').show(200);
+    $('#advParamValue').val("1")
+  }
+}
 
+$( "#tabs" ).tabs();
+$("#tabs").fadeIn(200);
 
 
 /* attach a submit handler to the form */
