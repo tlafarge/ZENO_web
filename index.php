@@ -125,7 +125,7 @@
 							<table id="optionalParam" style="width:50%; display: none;">
 								<tr>
 									<td  class="tooltip">Units for length: 		  <span class="tooltiptext">Choosing a conversion length of 10 cm means that a length of 1 (arbitrary units) in the input file is equivalent to 10cm. A non-arbitrary value is required for calculation of friction coefficien, diffusion coefficient and sedimentation coefficient</span> </td>
-									<td><input name='hunits' id='hunits' type='text' value='1'   ></td>
+									<td><input name='hunits' id='hunits' type='text' value=''   ></td>
 									<td>
 										<select id="hunitsType" name="hunitsType">
 											<option value="L" selected> L (generic)</option>
@@ -170,8 +170,8 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="tooltip">Bouyancy factor:  	  <span class="tooltiptext">Required for calculation of the sedimentation coefficient </span> </td>
-									<td><input name='bouyancy' id='bouyancy' type='text' value=''  ></td>
+									<td class="tooltip">Buoyancy factor:  	  <span class="tooltiptext">Required for calculation of the sedimentation coefficient </span> </td>
+									<td><input name='buoyancy' id='buoyancy' type='text' value=''  ></td>
 									<td> </td>
 								</tr>
 							</table>
@@ -182,7 +182,8 @@
 						<fieldset  class="advGroup" >
 							<legend onclick="toggleAdv();" style="cursor: pointer;">Advanced features</legend>
 							<arrowDiv id="arrowDiv2" onclick="toggleAdv();" style="cursor: pointer;" class="down"></arrowDiv>
-							<table id="advParam" style="width:50%; display: none;">
+
+							<table id="advParam" style="display: none;">
 								<tr>
 									<td class="tooltip">Random number generator seed:   	  </td>
 
@@ -197,21 +198,19 @@
 									<td class="tooltip">Custom skin thickness:  	 </td>
 									<td><input name='skinT' id='skinT' type='text' value=''  ></td>
 								</tr>
-								<tr>
-									<td><label><input type="checkbox"  name="hitPoints" id="hitPoints" value="1" /> Print statistics related to counts of hit points </label></td>
-								</tr>
-								<tr>
-									<td><label><input type="checkbox"  name="ram" id="ram" value="1" /> Print detailed RAM and timing information</label></td>
-								</tr>
-								<tr>
-									<td><label><input type="checkbox"  name="surfacePoints" id="surfacePoints" value="1" /> Print surface points from exterior calculations to a file</label></td>
-								</tr>
-								<tr>
-									<td><label><input type="checkbox"  name="interiorPoints" id="interiorPoints" value="1" /> Print interior sample points to a file</label></td>
-								</tr>
+
 
 							</table>
-
+							<div id="advParam2" style="display: none;">
+								<br/>
+								<label><input type="checkbox"  name="hitPoints" id="hitPoints" value="1" /> Print statistics related to counts of hit points </label>
+								<br/>
+								<label><input type="checkbox"  name="ram" id="ram" value="1" /> Print detailed RAM and timing information</label>
+								<br/>
+								<label><input type="checkbox"  name="surfacePoints" id="surfacePoints" value="1" /> Print surface points from exterior calculations to a file</label>
+								<br/>
+								<label><input type="checkbox"  name="interiorPoints" id="interiorPoints" value="1" /> Print interior sample points to a file</label>
+							</div>
 
 
 						</fieldset>

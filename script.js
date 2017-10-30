@@ -251,10 +251,13 @@ function toggleAdv()
   {
     $("#arrowDiv2").attr('class', 'down');
     $('#advParam').hide(200);
+    $('#advParam2').hide(200);
     $('#advParamValue').val("0")
   }else {
     $("#arrowDiv2").attr('class', 'up');
     $('#advParam').show(200);
+    $('#advParam2').show(200);
+
     $('#advParamValue').val("1")
   }
 }
@@ -302,7 +305,7 @@ $("#input").submit(function(event) {
     });
 
 
-    $("#tabs-"+resultTab).empty().append($(data));
+    $("#tabs-"+resultTab).empty().append(data);
     $("#tabs").tabs("option", "active", $(".ui-tabs-nav").children().size() - 1);
 
     resultTab = resultTab+1;

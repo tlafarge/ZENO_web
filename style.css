@@ -59,6 +59,8 @@ input[type=text], select {
 #bodArea{ width: 50%; float: left}
 #Interior{ width: 50%; float: left}
 #Exterior{ width: 50%; float: left}
+#advParam{	width: 50%;}
+#advParam2{	width: 50%;}
 
 .mol-container {
 	height:100%;
@@ -222,6 +224,8 @@ arrowDiv {
   #bodArea { width: 100%;}
 	.output{	max-width:80vw;width: 100%;}
 	#container{	width: 100%;	float: left;	}
+	#advParam{	max-width:80vw;width: 100%;}
+	#advParam2{	max-width:80vw;width: 100%;}
 
 
 }
