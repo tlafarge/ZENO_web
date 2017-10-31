@@ -56,14 +56,14 @@
 
 								Exterior calculation:
 								<div>
-									<input type="radio" name="extRad" value="nbWalk" id="nbWalk" checked="checked"/>
+									<input type="radio" name="extRad" value="nbWalk"  checked="checked"/>
 									<label for="nbWalk">Number of exterior walks</label>
 									<div class="sub1">
 										<input name='nbWalk' id='nbWalk' type='text' value='1000000'  >
 									</div>
 								</div>
 								<div>
-									<input type="radio" name="extRad" value="sdCap" id="sdCap"/>
+									<input type="radio" name="extRad" value="sdCap"/>
 									<label for="sdCap">Maximum relative standard deviation of capacitance</label>
 									<div class="sub1">
 										<input name='sdCap' id='sdCap' type='text' value='0.1'  >
@@ -74,7 +74,7 @@
 									</div>
 								</div>
 								<div>
-									<input type="radio" name="extRad" value="sdPol" id="sdPol"/>
+									<input type="radio" name="extRad" value="sdPol" />
 									<label for="sdPol">Maximum relative standard deviation of electric polarixability</label>
 									<div class="sub1">
 										<input name='sdPol' id='sdPol' type='text' value='0.1'  >
@@ -94,14 +94,14 @@
 
 								Interior calculation:
 								<div>
-									<input type="radio" name="intRad" value="nbSamples" id="nbSamples"/>
+									<input type="radio" name="intRad" value="nbSamples" />
 									<label for="nbSamples">Number of interior samples</label>
 									<div class="sub1">
 										<input name='nbSamples' id='nbSamples' type='text' value='1000000'  >
 									</div>
 								</div>
 								<div>
-									<input type="radio" name="intRad" value="sdVol" id="sdVol"/>
+									<input type="radio" name="intRad" value="sdVol" />
 									<label for="sdVol">Maximum relative standard deviation of volume</label>
 									<div class="sub1">
 										<input name='sdVol' id='sdVol' type='text' value='0.1'  >

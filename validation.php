@@ -56,8 +56,7 @@ if (!empty($_POST))
 	if($debug)
 	var_dump($params);
 
-	$session = hash("sha256",session_id().date('h:i:s'));
-
+	$session = substr(hash("sha256",session_id().date('h:i:s')), 0, 8);
 	if($debug)
 	echo "{$session}<br />";
 
@@ -235,13 +234,64 @@ if (!empty($_POST))
 		var_dump($outputOptStrings);
 
 		file_put_contents ( "$folder/input.bod" , $bodFileArray );
+		$cmdline = ' --input-file='.$folder."/input.bod".' --num-threads=1';
+
+		if($params['extRad']=="nbWalk")
+		{
+			$cmdline = $cmdline.' --num-walks='.$params['nbWalk'];
+		}
+		if($params['extRad']=="sdCap")
+		{
+			$cmdline = $cmdline.' --max-rsd-capacitance='.$params['sdCap'];
+			$cmdline = $cmdline.' --min-num-walks='.$params['minNbWalkCap'];
+		}
+		if($params['extRad']=="sdPol")
+		{
+			$cmdline = $cmdline.' --max-rsd-polarizability='.$params['sdPol'];
+			$cmdline = $cmdline.' --min-num-walks='.$params['minNbWalkPol'];
+		}
+		if($params['intRad']=="nbSamples")
+		{
+			$cmdline = $cmdline.' --num-interior-samples='.$params['nbSamples'];
+		}
+		if($params['intRad']=="sdVol")
+		{
+			$cmdline = $cmdline.' --max-rsd-volume='.$params['sdVol'];
+			$cmdline = $cmdline.' --min-num-interior-samples='.$params['minNbSample'];
+		}
+
+		if(isset($params['seed']))
+		{
+			$cmdline = $cmdline.' --seed='.$params['seed'];
+		}
+		if($params['advParamValue']=="1" && isset($params['hitPoints']))
+		{
+			$cmdline = $cmdline.' --print-counts';
+		}
+		if($params['advParamValue']=="1" && isset($params['ram']))
+		{
+			$cmdline = $cmdline.' --print-benchmarks';
+		}
+		if($params['advParamValue']=="1" && isset($params['surfacePoints']))
+		{
+			$cmdline = $cmdline.' --surface-points-file='.$folder."/SurfacePoints.txt";
+		}
+		if($params['advParamValue']=="1" && isset($params['interiorPoints']))
+		{
+			$cmdline = $cmdline.' --interior-points-file='.$folder."/InteriorPoints.txt";
+		}
+
+
+
+		echo "<br />comand line {$zeno} {$cmdline}<br />";
+
 
 
 
 	}
 
 
-	exec($zeno." --verbose launchscript.R ",$zenoOutput);
+	exec($zeno.$cmdline,$zenoOutput);
 
 	var_dump($zenoOutput);
 
