@@ -263,6 +263,7 @@ function toggleAdv()
 }
 
 $( "#tabs" ).tabs();
+$("#tabs").tabs("option", "active", 1);
 $("#tabs").fadeIn(200);
 
 

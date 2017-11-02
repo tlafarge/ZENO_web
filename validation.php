@@ -115,7 +115,7 @@ if (!empty($_POST))
 
 		}
 
-		if($params['advParamValue']=="1" && trim($params['rlaunch']) !='')
+		if(trim($params['rlaunch']) !='')
 		{
 			$bodFileArray[]="rlaunch ".trim($params['rlaunch'])."\r\n";
 		}
@@ -132,7 +132,7 @@ if (!empty($_POST))
 			}
 		}
 
-		if($params['advParamValue']=="1" && trim($params['skinT']) !='')
+		if(trim($params['skinT']) !='')
 		{
 			$bodFileArray[]="st ".trim($params['skinT'])."\r\n";
 		}
@@ -148,7 +148,7 @@ if (!empty($_POST))
 
 			}
 		}
-		if($params['optParam']=="1" && trim($params['hunits']) !='')
+		if( trim($params['hunits']) !='')
 		{
 			$bodFileArray[]="hunits ".trim($params['hunits'])." ".$params['hunitsType']."\r\n";
 		}
@@ -164,7 +164,7 @@ if (!empty($_POST))
 
 			}
 		}
-		if($params['optParam']=="1" && trim($params['temp']) !='')
+		if(trim($params['temp']) !='')
 		{
 			$bodFileArray[]="temp ".trim($params['temp'])." ".$params['tempType']."\r\n";
 		}
@@ -180,7 +180,7 @@ if (!empty($_POST))
 
 			}
 		}
-		if($params['optParam']=="1" && trim($params['mass']) !='')
+		if( trim($params['mass']) !='')
 		{
 			$bodFileArray[]="mass ".trim($params['mass'])." ".$params['massType']."\r\n";
 		}
@@ -196,7 +196,7 @@ if (!empty($_POST))
 
 			}
 		}
-		if($params['optParam']=="1" && trim($params['viscosity']) !='')
+		if( trim($params['viscosity']) !='')
 		{
 			$bodFileArray[]="viscosity ".trim($params['viscosity'])." ".$params['viscosityType']."\r\n";
 		}
@@ -212,7 +212,7 @@ if (!empty($_POST))
 
 			}
 		}
-		if($params['optParam']=="1" && trim($params['buoyancy']) !='')
+		if( trim($params['buoyancy']) !='')
 		{
 			$bodFileArray[]="buoyancy ".trim($params['buoyancy'])."\r\n";
 		}
@@ -262,23 +262,23 @@ if (!empty($_POST))
 			$cmdline = $cmdline.' --min-num-interior-samples='.$params['minNbSample'];
 		}
 
-		if(isset($params['seed']))
+		if( isset($params['seed']))
 		{
 			$cmdline = $cmdline.' --seed='.$params['seed'];
 		}
-		if($params['advParamValue']=="1" && isset($params['hitPoints']))
+		if( isset($params['hitPoints']))
 		{
 			$cmdline = $cmdline.' --print-counts';
 		}
-		if($params['advParamValue']=="1" && isset($params['ram']))
+		if( isset($params['ram']))
 		{
 			$cmdline = $cmdline.' --print-benchmarks';
 		}
-		if($params['advParamValue']=="1" && isset($params['surfacePoints']))
+		if( isset($params['surfacePoints']))
 		{
 			$cmdline = $cmdline.' --surface-points-file='.$folder."/SurfacePoints.txt";
 		}
-		if($params['advParamValue']=="1" && isset($params['interiorPoints']))
+		if( isset($params['interiorPoints']))
 		{
 			$cmdline = $cmdline.' --interior-points-file='.$folder."/InteriorPoints.txt";
 		}
