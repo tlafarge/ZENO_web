@@ -175,7 +175,7 @@ function drawDisplay()
 
   for (var i = 0; i < lines.length; i++) {
     var numData=lines[i].match(/[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?/g);
-    if( lines[i].indexOf("SPHERE") !== -1 && numData != null && numData.length == 4)
+    if( lines[i].toLowerCase().indexOf("sphere") !== -1 && numData != null && numData.length == 4)
     {
       sphereDataCenter.push([parseFloat(numData[0]),parseFloat(numData[1]),parseFloat(numData[2])]);
       sphereDataRadius.push(parseFloat(numData[3]));
@@ -277,6 +277,30 @@ $("#input").submit(function(event) {
   url = $form.attr('action');
   dataString = $("#input").serialize();
 
+  /*Prepare result tab*/
+  var toInsert="<div id=\"tabs-"+resultTab+"\"></div>";
+  $('#tabs').append($(toInsert));
+
+
+  var toInsert=" <li><a href='#tabs-"+resultTab+"'>results "+(resultTab-2)+"</a><span class='ui-closable-tab'>&#10006;</span></li> ";
+  $('#tabsul').append($(toInsert));
+
+  $( "#tabs" ).tabs("refresh");
+  $(function() {
+    $(".ui-closable-tab").on( "click", function() {
+      var tabContainerDiv=$(this).closest(".ui-tabs").attr("id");
+      var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
+      $( "#" + panelId ).remove();
+      $("#"+tabContainerDiv).tabs("refresh");
+
+    });
+  });
+  $("#tabs").tabs("option", "active", $(".ui-tabs-nav").children().size() - 1);
+
+  var toInsert=" <div class='loader' id='loader'></div> ";
+  $("#tabs-"+resultTab).append($(toInsert));
+
+
 
   /* Send the data using post */
   var posting = $.post(url, {
@@ -286,27 +310,8 @@ $("#input").submit(function(event) {
   /* Put the results in a div */
   posting.done(function(data) {
 
-    var toInsert="<div id=\"tabs-"+resultTab+"\"></div>";
-    $('#tabs').append($(toInsert));
-
-
-    var toInsert=" <li><a href='#tabs-"+resultTab+"'>results "+(resultTab-2)+"</a><span class='ui-closable-tab'>&#10006;</span></li> ";
-    $('#tabsul').append($(toInsert));
-
-    $( "#tabs" ).tabs("refresh");
-    $(function() {
-      $(".ui-closable-tab").on( "click", function() {
-        var tabContainerDiv=$(this).closest(".ui-tabs").attr("id");
-        var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
-        $( "#" + panelId ).remove();
-        $("#"+tabContainerDiv).tabs("refresh");
-
-      });
-    });
-
 
     $("#tabs-"+resultTab).empty().append(data);
-    $("#tabs").tabs("option", "active", $(".ui-tabs-nav").children().size() - 1);
 
     resultTab = resultTab+1;
   });

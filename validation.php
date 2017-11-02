@@ -10,6 +10,7 @@ $UserData = "./UserData";
 
 //variable containing the path to zeno executable
 $zeno = "echo";
+//$zeno = "/home/tlafarge/SharedWorkspace/ZENO-master/src/cpp/zeno";
 
 
 if (!empty($_POST))
@@ -285,15 +286,14 @@ if (!empty($_POST))
 
 		echo "<br />comand line {$zeno} {$cmdline}<br />";
 
+		exec($zeno.$cmdline,$zenoOutput);
 
-
+		foreach($zenoOutput as $child) {
+			echo $child . "<br />";
+		}
 
 	}
 
-
-	exec($zeno.$cmdline,$zenoOutput);
-
-	var_dump($zenoOutput);
 
 }
 else
