@@ -230,8 +230,9 @@ if (!empty($_POST))
 		}
 
 
-
+		if($debug)
 		var_dump($bodFileArray);
+		if($debug)
 		var_dump($outputOptStrings);
 
 		file_put_contents ( "$folder/input.bod" , $bodFileArray );
@@ -284,7 +285,7 @@ if (!empty($_POST))
 
 
 
-		echo "<br />comand line {$zeno} {$cmdline}<br />";
+		echo "<br />Comand line:  {$zeno} {$cmdline}<br />";
 
 		exec($zeno.$cmdline,$zenoOutput);
 

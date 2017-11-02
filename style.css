@@ -208,7 +208,8 @@ arrowDiv {
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   margin: auto;
-  margin-top: 50px;
+	margin-top: 2em;
+	margin-bottom: 2em;
 }
 
 @-webkit-keyframes spin {
