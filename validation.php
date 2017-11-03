@@ -293,6 +293,20 @@ if (!empty($_POST))
 			echo $child . "<br />";
 		}
 
+		file_put_contents ( "$folder/results.txt" , $zenoOutput );
+
+		echo "<br /><a download='results.txt' href='".$folder."/results.txt'  type='application/octet-stream'>  Download results file  </a><br/>     ";
+		echo "<a download='input.bod' href='".$folder."/input.bod'  type='application/octet-stream'>  Download bod file  </a><br/>     ";
+
+		if( isset($params['surfacePoints']) && file_exists($folder."/SurfacePoints.txt"))
+		{
+			echo "<a download='surfacePoints.txt' href='".$folder."/SurfacePoints.txt'  type='application/octet-stream'>  Download surfacePoints file  </a><br/>     ";
+		}
+		if( isset($params['interiorPoints']) && file_exists($folder."/InteriorPoints.txt"))
+		{
+			echo "<a download='InteriorPoints.txt' href='".$folder."/InteriorPoints.txt'  type='application/octet-stream'>  Download InteriorPoints file  </a><br/>     ";
+		}
+
 	}
 
 
