@@ -255,7 +255,7 @@ if (!empty($_POST))
 			$cmdline = $cmdline.' --min-num-interior-samples='.$params['minNbSample'];
 		}
 
-		if( $params['seed']) !='')
+		if( $params['seed'] !='')
 		{
 			$cmdline = $cmdline.' --seed='.$params['seed'];
 		}
