@@ -50,9 +50,13 @@ if (!empty($_POST))
 	$params = array();
 	parse_str($_POST["data"], $params);
 
+	//Trim and remove whitespace from post data
 	foreach($params as $key => $value) {
-		//	if (!is_array($value))
-		$params[$key] = htmlentities($value, ENT_QUOTES);
+		if($key == "output1"){
+			$params[$key] = htmlentities($value, ENT_QUOTES);
+		}	else {
+			$params[$key] = trim(preg_replace('/\s+/', '',htmlentities($value, ENT_QUOTES)));
+		}
 	}
 	if($debug)
 	var_dump($params);
@@ -61,18 +65,8 @@ if (!empty($_POST))
 	if($debug)
 	echo "{$session}<br />";
 
-
 	//Checking of the parameters
-	if (!preg_match("/^[0-9]+?$/",preg_replace('/\s+/', '',$params["seed"])))
-	{
-		echo "<pre>The random number generator seed is not a valid number <br /></pre>";
-		$validInputs=FALSE;
-	}
-	if (preg_replace('/\s+/', '',$params["output1"]) == '')
-	{
-		echo "<pre>No molecular data TODO <br /></pre>";
-		$validInputs=FALSE;
-	}
+	include 'verification.php';
 
 	if($debug)
 	var_dump($validInputs);
@@ -293,7 +287,7 @@ if (!empty($_POST))
 			echo $child . "<br />";
 		}
 
-		file_put_contents ( "$folder/results.txt" , $zenoOutput );
+		file_put_contents ( "$folder/results.txt" , implode("\r\n", $zenoOutput) );
 
 		echo "<br /><a download='results.txt' href='".$folder."/results.txt'  type='application/octet-stream'>  Download results file  </a><br/>     ";
 		echo "<a download='input.bod' href='".$folder."/input.bod'  type='application/octet-stream'>  Download bod file  </a><br/>     ";

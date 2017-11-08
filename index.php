@@ -7,7 +7,7 @@
 	<title>ZENO GUI</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="library/jquery-ui.min.css" rel="stylesheet">
-	<link rel="shortcut icon" href="Uncertainty.ico">
+	<link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
 	<h3>Zeno Gui</h3>
@@ -106,7 +106,7 @@
 									<div class="sub1">
 										<input name='sdVol' id='sdVol' type='text' value='0.1'  >
 										<br/>
-										<label for="minNbSample">Minimum number of exterior walks</label>
+										<label for="minNbSample">Minimum number of interior samples</label>
 										<br/>
 										<input name='minNbSample' id='minNbSample' type='text' value='1000' >
 									</div>
