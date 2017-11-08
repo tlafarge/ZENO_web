@@ -44,9 +44,6 @@ if (!empty($_POST))
 		closedir($handle);
 	}
 
-	$validInputs=TRUE;
-
-
 	$params = array();
 	parse_str($_POST["data"], $params);
 
@@ -58,6 +55,7 @@ if (!empty($_POST))
 			$params[$key] = trim(preg_replace('/\s+/', '',htmlentities($value, ENT_QUOTES)));
 		}
 	}
+
 	if($debug)
 	var_dump($params);
 
@@ -66,6 +64,7 @@ if (!empty($_POST))
 	echo "{$session}<br />";
 
 	//Checking of the parameters
+	$validInputs=TRUE;
 	include 'verification.php';
 
 	if($debug)
@@ -109,9 +108,9 @@ if (!empty($_POST))
 
 		}
 
-		if(trim($params['rlaunch']) !='')
+		if($params['rlaunch'] !='')
 		{
-			$bodFileArray[]="rlaunch ".trim($params['rlaunch'])."\r\n";
+			$bodFileArray[]="rlaunch ".$params['rlaunch']."\r\n";
 		}
 		else
 		{
@@ -126,9 +125,9 @@ if (!empty($_POST))
 			}
 		}
 
-		if(trim($params['skinT']) !='')
+		if($params['skinT'] !='')
 		{
-			$bodFileArray[]="st ".trim($params['skinT'])."\r\n";
+			$bodFileArray[]="st ".$params['skinT']."\r\n";
 		}
 		else
 		{
@@ -142,9 +141,9 @@ if (!empty($_POST))
 
 			}
 		}
-		if( trim($params['hunits']) !='')
+		if( $params['hunits'] !='')
 		{
-			$bodFileArray[]="hunits ".trim($params['hunits'])." ".$params['hunitsType']."\r\n";
+			$bodFileArray[]="hunits ".$params['hunits']." ".$params['hunitsType']."\r\n";
 		}
 		else
 		{
@@ -158,9 +157,9 @@ if (!empty($_POST))
 
 			}
 		}
-		if(trim($params['temp']) !='')
+		if($params['temp'] !='')
 		{
-			$bodFileArray[]="temp ".trim($params['temp'])." ".$params['tempType']."\r\n";
+			$bodFileArray[]="temp ".$params['temp']." ".$params['tempType']."\r\n";
 		}
 		else
 		{
@@ -174,9 +173,9 @@ if (!empty($_POST))
 
 			}
 		}
-		if( trim($params['mass']) !='')
+		if( $params['mass'] !='')
 		{
-			$bodFileArray[]="mass ".trim($params['mass'])." ".$params['massType']."\r\n";
+			$bodFileArray[]="mass ".$params['mass']." ".$params['massType']."\r\n";
 		}
 		else
 		{
@@ -190,9 +189,9 @@ if (!empty($_POST))
 
 			}
 		}
-		if( trim($params['viscosity']) !='')
+		if( $params['viscosity'] !='')
 		{
-			$bodFileArray[]="viscosity ".trim($params['viscosity'])." ".$params['viscosityType']."\r\n";
+			$bodFileArray[]="viscosity ".$params['viscosity']." ".$params['viscosityType']."\r\n";
 		}
 		else
 		{
@@ -206,9 +205,9 @@ if (!empty($_POST))
 
 			}
 		}
-		if( trim($params['buoyancy']) !='')
+		if( $params['buoyancy'] !='')
 		{
-			$bodFileArray[]="buoyancy ".trim($params['buoyancy'])."\r\n";
+			$bodFileArray[]="buoyancy ".$params['buoyancy']."\r\n";
 		}
 		else
 		{
@@ -256,7 +255,7 @@ if (!empty($_POST))
 			$cmdline = $cmdline.' --min-num-interior-samples='.$params['minNbSample'];
 		}
 
-		if( isset($params['seed']))
+		if( $params['seed']) !='')
 		{
 			$cmdline = $cmdline.' --seed='.$params['seed'];
 		}
