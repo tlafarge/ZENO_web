@@ -208,7 +208,7 @@ function toggleAdv()
     $('#advParamValue').val("1")
   }
 }
-
+ $("#tabs-1").load("about.md.html");
 $( "#tabs" ).tabs();
 $("#tabs").tabs("option", "active", 1);
 $("#tabs").fadeIn(200);

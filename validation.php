@@ -278,7 +278,7 @@ if (!empty($_POST))
 
 
 
-		echo "<br />Comand line:  {$zeno} {$cmdline}<br />";
+		echo "<br />Comand line: zeno {$cmdline}<br /><br />";
 
 		exec($zeno.$cmdline,$zenoOutput);
 
