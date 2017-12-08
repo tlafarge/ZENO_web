@@ -323,11 +323,12 @@ if (!empty($_POST))
 				"Counts",
 				"Interior hits",
 				"Initialize",
+				"Read",
 				"Broadcast",
 				"Centers Preprocess",
 				"Exterior Walk",
 				"Exterior Reduce",
-				"Surface Preprocess", 
+				"Surface Preprocess",
 				"Total Time",
 				"End time");
 			foreach ($boldWord as &$word) {
