@@ -320,6 +320,14 @@ if (!empty($_POST))
 				"(Eigenvalues of )?Gyration tensor",
 				"Intrinsic conductivity",
 				"Intrinsic viscosity",
+				"Counts",
+				"Interior hits",
+				"Initialize",
+				"Broadcast",
+				"Centers Preprocess",
+				"Exterior Walk",
+				"Exterior Reduce",
+				"Surface Preprocess", 
 				"Total Time",
 				"End time");
 			foreach ($boldWord as &$word) {
