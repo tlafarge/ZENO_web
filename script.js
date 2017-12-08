@@ -208,7 +208,36 @@ function toggleAdv()
     $('#advParamValue').val("1")
   }
 }
- $("#tabs-1").load("about.md.html");
+
+function clearOpt()
+{
+  $('#hunits').val('');
+  $('#temp').val('');
+  $('#mass').val('');
+  $('#viscosity').val('');
+  $('#buoyancy').val('');
+
+  $('#hunitsType').val("L");
+  $('#tempType').val("C");
+  $('#massType').val("Da");
+  $('#viscosityType').val("p");
+}
+
+function clearAdv()
+{
+  var seed = Math.floor((Math.random() * 100) + 1);
+  $('#seed').val(seed.toString());
+  $('#rlaunch').val('');
+  $('#skinT').val('');
+
+  $('#hitPoints').attr('checked', false);
+  $('#ram').attr('checked', false);
+  $('#surfacePoints').attr('checked', false);
+  $('#interiorPoints').attr('checked', false);
+}
+
+
+$("#tabs-1").load("about.md.html");
 $( "#tabs" ).tabs();
 $("#tabs").tabs("option", "active", 1);
 $("#tabs").fadeIn(200);

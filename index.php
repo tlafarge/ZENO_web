@@ -18,7 +18,7 @@
 			<li><a href="#tabs-2">App</a></li>
 		</ul>
 		<div id="tabs-1">
-			
+
 		</div>
 		<div id="tabs-2">
 			<div id="form">
@@ -70,7 +70,7 @@
 							</div>
 							<div>
 								<input type="radio" name="extRad" value="sdPol" />
-								<label for="sdPol">Maximum relative standard deviation of electric polarixability</label>
+								<label for="sdPol">Maximum relative standard deviation of electric polarizability</label>
 								<div class="sub1">
 									<input name='sdPol' id='sdPol' type='text' value='0.1'  >
 									<br/>
@@ -117,6 +117,7 @@
 					<fieldset  class="optGroup" >
 						<legend onclick="toggleParam();" style="cursor: pointer;">Physical properties specifications</legend>
 						<arrowDiv id="arrowDiv" onclick="toggleParam();" style="cursor: pointer;" class="down"></arrowDiv>
+						<button id='clearOptButton' class="clear" type="button" onclick=clearOpt()>Clear</button>
 						<table id="optionalParam" style="width:50%; display: none;">
 							<tr>
 								<td  class="tooltip">Units for length: 		  <span class="tooltiptext">Choosing a conversion length of 10 cm means that a length of 1 (arbitrary units) in the input file is equivalent to 10cm. A non-arbitrary value is required for calculation of friction coefficien, diffusion coefficient and sedimentation coefficient</span> </td>
@@ -177,6 +178,7 @@
 					<fieldset  class="advGroup" >
 						<legend onclick="toggleAdv();" style="cursor: pointer;">Advanced features</legend>
 						<arrowDiv id="arrowDiv2" onclick="toggleAdv();" style="cursor: pointer;" class="down"></arrowDiv>
+						<button id='clearAdvButton' class="clear" type="button" onclick=clearAdv()>Clear</button>
 
 						<table id="advParam" style="display: none;">
 							<tr>

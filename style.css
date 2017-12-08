@@ -7,6 +7,7 @@ html, body, div, img, p, table, thead, tbody, tfoot, tr,td,tt, h1,h2,h3,h4,h5,h6
 
 
 
+
 body {
 	font-family: 'Lato', Times, 'Times New Roman', serif;
 	font-size: 16px;
@@ -222,6 +223,88 @@ arrowDiv {
   100% { transform: rotate(360deg); }
 }
 
+span{
+	vertical-align: super;
+	font-size: 70%;
+}
+.checkbox-grid li {
+    display: block;
+}
+
+.checkbox-grid {
+    position: relative;
+    width: 15em;
+    padding: 1em;
+}
+
+.checkbox-grid:before, .checkbox-grid:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 1px solid #000;
+    width: 6px;
+    height: 100%;
+}
+.checkbox-grid:before {
+    left: -6px;
+    border-right: 0px;
+}
+.checkbox-grid:after {
+    right: -6px;
+    border-left: 0px;
+}
+
+.checkbox-mat li {
+    display: block;
+}
+.checkbox-mat:before, .checkbox-mat:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 1px solid #000;
+    width: 6px;
+    height: 100%;
+}
+.checkbox-mat:before {
+    left: -6px;
+    border-right: 0px;
+}
+.checkbox-mat:after {
+    right: -6px;
+    border-left: 0px;
+}
+.checkbox-mat {
+    display: flex;
+    position: relative;
+    width: 45em;
+    flex-flow: row wrap;
+}
+
+.checkbox-mat > * {
+    flex: 1 1 33%;
+}
+
+.clear {
+	background-color: #E50F0F;
+	border-radius: 50%;
+	box-shadow: 0 0 2px #E50F0F;
+	cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+	margin-left: 5em;
+}
+
+.clear:hover {
+    background-color: #E81010;
+}
+
+strong,a {
+    font-weight: bold;
+}
+
+
 #footer {
 	bottom:0;
 	float:bottom;
@@ -237,6 +320,7 @@ arrowDiv {
 
 
 }
+
 
 @media screen and (max-width: 1024px) {
 	#instruction { width: 100% ;}

@@ -12,7 +12,6 @@ $UserData = "./UserData";
 $zeno = "echo";
 //$zeno = "/home/tlafarge/SharedWorkspace/ZENO-master/src/cpp/zeno";
 
-
 if (!empty($_POST))
 {
 	//Clean the UserData Folder
@@ -207,14 +206,14 @@ if (!empty($_POST))
 		}
 		if( $params['buoyancy'] !='')
 		{
-			$bodFileArray[]="buoyancy ".$params['buoyancy']."\r\n";
+			$bodFileArray[]="bf ".$params['buoyancy']."\r\n";
 		}
 		else
 		{
 			foreach ($outputOptStrings as $outputLine)
 			{
 				$firstWord = strtolower(trim(explode(' ',$outputLine)[0]));
-				if($firstWord == 'buoyancy')
+				if($firstWord == 'bf')
 				{
 					$bodFileArray[]="{$outputLine}\r\n";
 				}
@@ -278,15 +277,65 @@ if (!empty($_POST))
 
 
 
-		echo "<br />Comand line: zeno {$cmdline}<br /><br />";
+			echo "<br /><strong>Comand line:</strong> zeno {$cmdline}<br /><br />";
 
-		exec($zeno.$cmdline,$zenoOutput);
+			exec($zeno.$cmdline,$zenoOutput);
+
+
+			file_put_contents ( "$folder/results.txt" , implode("\r\n", $zenoOutput) );
+
+
+			$zenoOutput=implode("\r\n", $zenoOutput);
+
+	    $pattern = '/\[ ([-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]? \+\/\- [-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]?) , ([-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]? \+\/\- [-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]?) , ([-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]? \+\/\- [-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]?) ,\s*([-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]? \+\/\- [-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]?) , ([-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]? \+\/\- [-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]?) , ([-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]? \+\/\- [-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]?) ,\s*([-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]? \+\/\- [-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]?) , ([-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]? \+\/\- [-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]?) , ([-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]? \+\/\- [-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]?) \]/i';
+			$replacement = "<ul class='checkbox-mat'> <li>$1</li><li>$2</li><li>$3</li><li>$4</li><li>$5</li><li>$6</li><li>$7</li><li>$8</li><li>$9</li></ul>";
+	    $zenoOutput = preg_replace($pattern, $replacement, $zenoOutput);
+
+
+
+			$pattern = '/< ([-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]? \+\/\- [-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]?) , ([-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]? \+\/\- [-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]?) , ([-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]? \+\/\- [-+]?[0-9]*\.?[0-9]+[[eE][-+]?[0-9]+]?) >/i';
+			$replacement = "<ul class='checkbox-grid'> <li>$1</li><li>$2</li><li>$3</li></ul>";
+			$zenoOutput = preg_replace($pattern, $replacement, $zenoOutput);
+
+/*		$pattern = '/ ([-+]?[0-9]*\.?[0-9])+[[eE]([-+]?[0-9]+]?)/i';
+			$replacement = ' $1 x 10<span>$2</span>';
+			$zenoOutput = preg_replace($pattern, $replacement, $zenoOutput);
+*/
+			$pattern = '/ \+\/\- /i';
+			$replacement = ' ± ';
+			$zenoOutput = preg_replace($pattern, $replacement, $zenoOutput);
+
+
+			$boldWord = array(
+				"Start time",
+				"Number of walks performed",
+				"Number of interior samples taken",
+				"Capacitance",
+				"(Eigenvalues of )?Electric polarizability tensor",
+				"Mean electric polarizability",
+				"Hydrodynamic radius",
+				"Prefactor for computing intrinsic viscosity",
+				"Viscometric radius",
+				"Volume",
+				"(Eigenvalues of )?Gyration tensor",
+				"Intrinsic conductivity",
+				"Intrinsic viscosity",
+				"Total Time",
+				"End time");
+			foreach ($boldWord as &$word) {
+				$pattern = '/('.$word.'.*?:)/i';
+				$replacement = '<strong>$1</strong>';
+				$zenoOutput = preg_replace($pattern, $replacement, $zenoOutput);
+
+			}
+
+
+			$zenoOutput=explode("\r\n", $zenoOutput);
 
 		foreach($zenoOutput as $child) {
 			echo $child . "<br />";
 		}
 
-		file_put_contents ( "$folder/results.txt" , implode("\r\n", $zenoOutput) );
 
 		echo "<br /><a download='results.txt' href='".$folder."/results.txt'  type='application/octet-stream'>  Download results file  </a><br/>     ";
 		echo "<a download='input.bod' href='".$folder."/input.bod'  type='application/octet-stream'>  Download bod file  </a><br/>     ";
