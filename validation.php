@@ -1,7 +1,7 @@
 
 
 <?php
-$debug=TRUE;
+$debug=FALSE;
 $autoClean=TRUE;
 set_time_limit(200);
 
@@ -9,8 +9,8 @@ set_time_limit(200);
 $UserData = "./UserData";
 
 //variable containing the path to zeno executable
-$zeno = "echo";
-//$zeno = "/home/tlafarge/SharedWorkspace/ZENO-master/src/cpp/zeno";
+
+$zeno = "/home/tlafarge/SharedWorkspace/ZENO-master/src/cpp/zeno";
 
 if (!empty($_POST))
 {
@@ -305,6 +305,15 @@ if (!empty($_POST))
 			$replacement = ' ± ';
 			$zenoOutput = preg_replace($pattern, $replacement, $zenoOutput);
 
+			$pattern = '/(Results\s*-*)/i';
+			$replacement = '<strong>$1</strong>';
+			$zenoOutput = preg_replace($pattern, $replacement, $zenoOutput);
+
+			$pattern = '/(Parameters\s*-*)/i';
+			$replacement = '<strong>$1</strong>';
+			$zenoOutput = preg_replace($pattern, $replacement, $zenoOutput);
+
+
 
 			$boldWord = array(
 				"Start time",
@@ -323,7 +332,7 @@ if (!empty($_POST))
 				"Counts",
 				"Interior hits",
 				"Initialize",
-				"Read",
+				"\s+Read",
 				"Broadcast",
 				"Centers Preprocess",
 				"Exterior Walk",
