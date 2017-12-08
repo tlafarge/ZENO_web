@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="library/jquery-ui.min.css" rel="stylesheet">
 	<link rel="shortcut icon" href="favicon.ico">
+	<style id="antiClickjack">body{display:none !important;}</style>
 </head>
 <body>
 	<h3>Zeno Gui</h3>

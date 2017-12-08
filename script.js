@@ -7,6 +7,14 @@
 //## ===================================================================
 
 
+//antiClickjack
+if (self === top) {
+       var antiClickjack = document.getElementById("antiClickjack");
+       antiClickjack.parentNode.removeChild(antiClickjack);
+   } else {
+       top.location = self.location;
+   }
+
 //Colormap
 colorRainbow=['#ff0000','#ff1a00','#ff2800','#ff3300','#ff3b00','#ff4300','#ff4a00','#ff5000','#ff5600','#ff5c00','#ff6200','#ff6700','#ff6c00','#ff7100','#ff7500','#ff7a00','#ff7f00','#ff8300','#ff8700','#ff8c00','#ff9000','#ff9400','#ff9800','#ff9c00','#ffa000','#ffa400','#ffa800','#ffac00','#ffb000','#ffb400','#ffb800','#ffbb00','#ffbf00','#ffc300','#ffc700','#ffca00','#ffce00','#ffd200','#ffd500','#ffd900','#ffdd00','#ffe000','#ffe400','#ffe800','#ffeb00','#ffef00','#fff200','#fff600','#fffa00','#fffd00','#fbfc00','#f2f702','#e9f205','#e1ed09','#dae80e','#d2e313','#cbde18','#c5d91d','#bed421','#b8cf25','#b3ca29','#adc52d','#a8c031','#a3bc34','#9fb738','#9bb23c','#97ae3f','#93a943','#90a547','#8ca04b','#899c4e','#879752','#849356','#828f5a','#808b5e','#7d8662','#7c8266','#7a7e6b','#787a6f','#767674','#757279','#736e7e','#716a83','#706688','#6e628e','#6c5e94','#6a5a9a','#6855a0','#6551a6','#624dad','#5f48b4','#5c44bb','#583fc3','#533acb','#4e34d3','#472edb','#3f27e3','#341fec','#2413f6','#0000ff'];
 
