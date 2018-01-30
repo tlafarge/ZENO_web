@@ -1,0 +1,65 @@
+Start time: 2018-01-26 10:04:00
+
+Parameters
+----------
+
+Input file: ./UserData/31d5bdea/input.bod
+Number of nodes: 1
+Number of threads: 1
+Random number seed: 27
+Number of walks requested: 2000
+Number of interior samples requested: 2000
+Max run time: 200 s
+Skin thickness: 1e-06
+Launch center: < 1 , 1 , 1 >
+Launch radius: 1
+Length scale: 4 m
+Temperature: 290 K
+Mass: 2 kg
+
+Results
+-------
+
+Number of walks performed: 2000
+
+Number of interior samples performed: 2000
+
+Capacitance (m): 4.000000e+00 +/- 0.000000e+00
+
+Electric polarizability tensor (m^3):
+[ 7.979897e+02 +/- 2.823418e+01 , 5.750922e+00 +/- 2.211302e+01 , -9.619068e+00 +/- 2.182677e+01 ,
+  5.750922e+00 +/- 2.211302e+01 , 8.590510e+02 +/- 2.859568e+01 , 3.400470e+01 +/- 2.209799e+01 ,
+  -9.619068e+00 +/- 2.182677e+01 , 3.400470e+01 +/- 2.209799e+01 , 7.921119e+02 +/- 2.820906e+01 ]
+
+Eigenvalues of electric polarizability tensor (m^3):
+< 7.729485e+02 +/- 2.954904e+01 , 8.028756e+02 +/- 2.901454e+01 , 8.733285e+02 +/- 2.928190e+01 >
+
+Mean electric polarizability (m^3): 8.163842e+02 +/- 1.636607e+01
+
+Hydrodynamic radius (m): 4.000000e+00 +/- 4.000000e-02
+
+Prefactor for computing intrinsic viscosity: 8.332363e-01 +/- 1.249854e-02
+
+Viscometric radius (m): 4.019864e+00 +/- 3.354929e-02
+
+Intrinsic viscosity with mass units (cm^3/g): 3.401205e+05 +/- 8.515810e+03
+
+Volume (m^3): 2.680826e+02 +/- 0.000000e+00
+
+Capacitance of a sphere of the same volume (m): 4.000000e+00 +/- 0.000000e+00
+
+Gyration tensor (m^2):
+[ 3.080317e+00 +/- 4.488513e-01 , 1.588984e-02 +/- 3.236661e-01 , 6.976191e-03 +/- 3.192246e-01 ,
+  1.588984e-02 +/- 3.236661e-01 , 3.204704e+00 +/- 4.631158e-01 , -9.156346e-02 +/- 3.253594e-01 ,
+  6.976191e-03 +/- 3.192246e-01 , -9.156346e-02 +/- 3.253594e-01 , 3.150649e+00 +/- 4.563852e-01 ]
+
+Eigenvalues of gyration tensor (m^2):
+< 3.065943e+00 +/- 3.336381e-01 , 3.096200e+00 +/- 6.290718e-01 , 3.273527e+00 +/- 3.400935e-01 >
+
+Intrinsic conductivity: 3.045272e+00 +/- 6.104860e-02
+
+Intrinsic viscosity: 2.537431e+00 +/- 6.353125e-02
+
+Total Time (s): 0.017636
+
+End time: 2018-01-26 10:04:00

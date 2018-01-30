@@ -1,0 +1,61 @@
+Start time: 2018-01-26 10:04:10
+
+Parameters
+----------
+
+Input file: ./UserData/1c89d4a2/input.bod
+Number of nodes: 1
+Number of threads: 1
+Random number seed: 27
+Number of walks requested: 100000
+Number of interior samples requested: 100000
+Max run time: 200 s
+Skin thickness: 3.95629e-06
+Launch center: < -2.97224 , 1.59 , 2.06236 >
+Launch radius: 3.95629
+Length scale: 1 L
+
+Results
+-------
+
+Number of walks performed: 100000
+
+Number of interior samples performed: 100000
+
+Capacitance (L): 2.164172e+00 +/- 6.227761e-03
+
+Electric polarizability tensor (L^3):
+[ 8.328869e+01 +/- 1.374992e+00 , 4.571407e+01 +/- 1.668489e+00 , -9.230592e-01 +/- 9.805118e-01 ,
+  4.571407e+01 +/- 1.668489e+00 , 2.515687e+02 +/- 2.986203e+00 , -3.525081e+01 +/- 1.668544e+00 ,
+  -9.230592e-01 +/- 9.805118e-01 , -3.525081e+01 +/- 1.668544e+00 , 8.405373e+01 +/- 1.372909e+00 ]
+
+Eigenvalues of electric polarizability tensor (L^3):
+< 6.644367e+01 +/- 1.596472e+00 , 8.289582e+01 +/- 1.378737e+00 , 2.695716e+02 +/- 2.885385e+00 >
+
+Mean electric polarizability (L^3): 1.396370e+02 +/- 1.187569e+00
+
+Hydrodynamic radius (L): 2.164172e+00 +/- 2.251997e-02
+
+Prefactor for computing intrinsic viscosity: 8.162599e-01 +/- 1.224390e-02
+
+Viscometric radius (L): 2.216155e+00 +/- 1.273791e-02
+
+Volume (L^3): 1.715870e+01 +/- 2.038732e-01
+
+Capacitance of a sphere of the same volume (L): 1.600044e+00 +/- 6.337041e-03
+
+Gyration tensor (L^2):
+[ 6.345365e-01 +/- 2.813758e-01 , 6.531238e-01 +/- 1.408874e-01 , -8.078500e-03 +/- 1.672348e-01 ,
+  6.531238e-01 +/- 1.408874e-01 , 3.457855e+00 +/- 1.358425e-01 , -5.588603e-01 +/- 9.967426e-02 ,
+  -8.078500e-03 +/- 1.672348e-01 , -5.588603e-01 +/- 9.967426e-02 , 6.607593e-01 +/- 1.551308e-01 ]
+
+Eigenvalues of gyration tensor (L^2):
+< 4.102770e-01 +/- 3.481876e-01 , 6.424964e-01 +/- 1.100377e-01 , 3.700378e+00 +/- 1.171665e-01 >
+
+Intrinsic conductivity: 8.137971e+00 +/- 1.189099e-01
+
+Intrinsic viscosity: 6.642700e+00 +/- 1.391012e-01
+
+Total Time (s): 1.395880
+
+End time: 2018-01-26 10:04:11

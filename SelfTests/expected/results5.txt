@@ -1,0 +1,61 @@
+Start time: 2018-01-26 10:03:57
+
+Parameters
+----------
+
+Input file: ./UserData/31546618/input.bod
+Number of nodes: 1
+Number of threads: 1
+Random number seed: 27
+Number of walks requested: 2000
+Number of interior samples requested: 2000
+Max run time: 200 s
+Skin thickness: 1e-06
+Launch center: < 1 , 1 , 1 >
+Launch radius: 1
+Length scale: 123 L
+
+Results
+-------
+
+Number of walks performed: 2000
+
+Number of interior samples performed: 2000
+
+Capacitance (L): 1.230000e+02 +/- 0.000000e+00
+
+Electric polarizability tensor (L^3):
+[ 2.320239e+07 +/- 8.209384e+05 , 1.672141e+05 +/- 6.429592e+05 , -2.796845e+05 +/- 6.346363e+05 ,
+  1.672141e+05 +/- 6.429592e+05 , 2.497781e+07 +/- 8.314493e+05 , 9.887223e+05 +/- 6.425223e+05 ,
+  -2.796845e+05 +/- 6.346363e+05 , 9.887223e+05 +/- 6.425223e+05 , 2.303148e+07 +/- 8.202079e+05 ]
+
+Eigenvalues of electric polarizability tensor (L^3):
+< 2.247429e+07 +/- 8.591692e+05 , 2.334445e+07 +/- 8.436282e+05 , 2.539294e+07 +/- 8.514019e+05 >
+
+Mean electric polarizability (L^3): 2.373723e+07 +/- 4.758605e+05
+
+Hydrodynamic radius (L): 1.230000e+02 +/- 1.230000e+00
+
+Prefactor for computing intrinsic viscosity: 8.332363e-01 +/- 1.249854e-02
+
+Viscometric radius (L): 1.236108e+02 +/- 1.031641e+00
+
+Volume (L^3): 7.794781e+06 +/- 0.000000e+00
+
+Capacitance of a sphere of the same volume (L): 1.230000e+02 +/- 0.000000e+00
+
+Gyration tensor (L^2):
+[ 2.912632e+03 +/- 4.244170e+02 , 1.502483e+01 +/- 3.060466e+02 , 6.596425e+00 +/- 3.018468e+02 ,
+  1.502483e+01 +/- 3.060466e+02 , 3.030248e+03 +/- 4.379049e+02 , -8.657898e+01 +/- 3.076476e+02 ,
+  6.596425e+00 +/- 3.018468e+02 , -8.657898e+01 +/- 3.076476e+02 , 2.979136e+03 +/- 4.315407e+02 ]
+
+Eigenvalues of gyration tensor (L^2):
+< 2.899041e+03 +/- 3.154757e+02 , 2.927651e+03 +/- 5.948268e+02 , 3.095324e+03 +/- 3.215796e+02 >
+
+Intrinsic conductivity: 3.045272e+00 +/- 6.104860e-02
+
+Intrinsic viscosity: 2.537431e+00 +/- 6.353125e-02
+
+Total Time (s): 0.018105
+
+End time: 2018-01-26 10:03:57
