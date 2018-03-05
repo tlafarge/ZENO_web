@@ -1,6 +1,6 @@
 
 <?php
-	$debug=FALSE;
+	$debug=TRUE;
 	$autoClean=TRUE;
 	set_time_limit(200);
 
@@ -9,7 +9,9 @@
 
 	//variable containing the path to zeno executable
 
-	$zeno = "/home/tlafarge/SharedWorkspace/zeno-master/cpp/src/zeno";
+
+	$zeno = "echo";
+	//$zeno = "/home/tlafarge/SharedWorkspace/ZENO-master/src/cpp/zeno";
 
 
 	if (!empty($_POST))
@@ -95,6 +97,12 @@
 			$firstWord = strtolower(trim(explode(' ',$outputLine)[0]));
 
 			if($firstWord == 'sphere')
+			{
+				$outputLine=strtolower($outputLine);
+				$bodFileArray[]="{$outputLine}\r\n";
+			}
+
+			if($firstWord == 'cuboid')
 			{
 				$outputLine=strtolower($outputLine);
 				$bodFileArray[]="{$outputLine}\r\n";

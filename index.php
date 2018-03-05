@@ -12,7 +12,6 @@
 </head>
 <body>
 	<h3>Zeno Gui</h3>
-
 	<div id="tabs">
 		<ul id="tabsul">
 			<li><a href="#tabs-1">About</a></li>
@@ -225,13 +224,11 @@
 
 
 	</div>
-	<script src="library/3Dmol-min.js"></script>
+	<script src="library/3Dmol.js"></script>
 
 	<script src="library/jquery.js"></script>
 	<script src="library/jquery-ui.min.js"></script>
 	<script src="script.js"></script>
-
-
 
 	<footer id="footer">
 		<p>This software was developed at NIST. This software is not subject to copyright protection and is
@@ -244,7 +241,6 @@
 			Version 0.1.0
 		</p>
 	</footer>
-
 
 
 </body>

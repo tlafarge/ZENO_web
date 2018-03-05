@@ -15,6 +15,7 @@ if (self === top) {
        top.location = self.location;
    }
 
+
 //Colormap
 colorRainbow=['#ff0000','#ff1a00','#ff2800','#ff3300','#ff3b00','#ff4300','#ff4a00','#ff5000','#ff5600','#ff5c00','#ff6200','#ff6700','#ff6c00','#ff7100','#ff7500','#ff7a00','#ff7f00','#ff8300','#ff8700','#ff8c00','#ff9000','#ff9400','#ff9800','#ff9c00','#ffa000','#ffa400','#ffa800','#ffac00','#ffb000','#ffb400','#ffb800','#ffbb00','#ffbf00','#ffc300','#ffc700','#ffca00','#ffce00','#ffd200','#ffd500','#ffd900','#ffdd00','#ffe000','#ffe400','#ffe800','#ffeb00','#ffef00','#fff200','#fff600','#fffa00','#fffd00','#fbfc00','#f2f702','#e9f205','#e1ed09','#dae80e','#d2e313','#cbde18','#c5d91d','#bed421','#b8cf25','#b3ca29','#adc52d','#a8c031','#a3bc34','#9fb738','#9bb23c','#97ae3f','#93a943','#90a547','#8ca04b','#899c4e','#879752','#849356','#828f5a','#808b5e','#7d8662','#7c8266','#7a7e6b','#787a6f','#767674','#757279','#736e7e','#716a83','#706688','#6e628e','#6c5e94','#6a5a9a','#6855a0','#6551a6','#624dad','#5f48b4','#5c44bb','#583fc3','#533acb','#4e34d3','#472edb','#3f27e3','#341fec','#2413f6','#0000ff'];
 
@@ -24,6 +25,7 @@ $('#seed').val(seed.toString());
 var viewer = null;
 var resultTab=3;
 $('#container').css("height","2em");
+
 
 
 // Drag an drop files
@@ -127,6 +129,7 @@ function drawDisplay()
   lines = lines.split(/\r\n|\r|\n/g);
   var sphereDataCenter = [];
   var sphereDataRadius = [];
+  var cuboidData = [];
 
   for (var i = 0; i < lines.length; i++) {
     var numData=lines[i].match(/[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?/g);
@@ -135,10 +138,15 @@ function drawDisplay()
       sphereDataCenter.push([parseFloat(numData[0]),parseFloat(numData[1]),parseFloat(numData[2])]);
       sphereDataRadius.push(parseFloat(numData[3]));
     }
+	if( lines[i].toLowerCase().indexOf("cuboid") !== -1 && numData != null && numData.length == 6)
+    {
+      cuboidData.push([parseFloat(numData[0]),parseFloat(numData[1]),parseFloat(numData[2]),parseFloat(numData[3]),parseFloat(numData[4]),parseFloat(numData[5])]);
+    }
   }
 
+  //color by radius of sphere
   var countsRadius = {};
-  var nbRadius = 0
+  var nbRadius = 0;
   for (var i = 0; i < sphereDataRadius.length; i++) {
     var num = sphereDataRadius[i];
     if(countsRadius[num]==null)
@@ -147,14 +155,37 @@ function drawDisplay()
       countsRadius[num] = nbRadius;
     }
   }
+  if(nbRadius >=1)
+  {
+	  Object.keys(countsRadius).length
+	  var colorMap = colorRainbow.filter(function(element, index, array) {
+		return (index % Math.floor(colorRainbow.length /  Object.keys(countsRadius).length) === 0);
+	  });
+  }
 
-  Object.keys(countsRadius).length
-  var colorMap = colorRainbow.filter(function(element, index, array) {
-    return (index % Math.floor(colorRainbow.length /  Object.keys(countsRadius).length) === 0);
-  });
+  //color by diagonal of cuboid
+  var countsDiag = {};
+  var nbDiag = 0;
+  var cuboidDiag = {};
+  for (var i = 0; i < cuboidData.length; i++) {
+    var diag = Math.sqrt(Math.pow(cuboidData[i][3]-cuboidData[i][0],2) + Math.pow(cuboidData[i][4]-cuboidData[i][1],2) + Math.pow(cuboidData[i][5]-cuboidData[i][2],2)  );
+    cuboidDiag[i] = diag;
+	if(countsDiag[diag]==null)
+    {
+      nbDiag++;
+      countsDiag[diag] = nbDiag;
+    }
+  }
+  if(nbDiag >=1)
+  {
+	  Object.keys(countsDiag).length
+	  var colorMapCube = colorRainbow.filter(function(element, index, array) {
+		return (index % Math.floor(colorRainbow.length /  Object.keys(countsDiag).length) === 0);
+	  });
+  }
 
 
-  if(sphereDataRadius.length > 0)
+  if(sphereDataRadius.length + cuboidData.length > 0)
   {
     let element = $('#container-01');
     $('#container').css("height","25em");
@@ -170,6 +201,10 @@ function drawDisplay()
     for (var i = 0; i < sphereDataCenter.length; i++)
     {
       viewer.addSphere({ center: {x:sphereDataCenter[i][0], y:sphereDataCenter[i][1], z:sphereDataCenter[i][2]}, radius: sphereDataRadius[i], color: colorMap[countsRadius[sphereDataRadius[i]]-1] });
+    }
+	for (var i = 0; i < cuboidData.length; i++)
+    {
+      viewer.addBox({corner: {x:cuboidData[i][0],y:cuboidData[i][1],z:cuboidData[i][2]}, dimensions: {w: cuboidData[i][3]-cuboidData[i][0], h: cuboidData[i][4]-cuboidData[i][1], d: cuboidData[i][5]-cuboidData[i][2]}, color: colorMapCube[countsDiag[cuboidDiag[i]]-1]});
     }
 
     viewer.zoomTo();
