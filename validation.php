@@ -1,6 +1,6 @@
 
 <?php
-	$debug=TRUE;
+	$debug=FALSE;
 	$autoClean=TRUE;
 	set_time_limit(200);
 
@@ -9,9 +9,7 @@
 
 	//variable containing the path to zeno executable
 
-
-	$zeno = "echo";
-	//$zeno = "/home/tlafarge/SharedWorkspace/ZENO-master/src/cpp/zeno";
+	$zeno = "/home/tlafarge/SharedWorkspace/zeno-master/cpp/src/zeno";
 
 
 	if (!empty($_POST))
