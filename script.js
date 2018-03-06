@@ -320,6 +320,8 @@ $("#input").submit(function(event) {
   var toInsert=" <div class='loader' id='loader'></div> ";
   $("#tabs-"+resultTab).append($(toInsert));
 
+  $("input[type=submit]").attr("disabled", "disabled");
+  $("input[type=submit]").css({"opacity":"0.65","cursor":"not-allowed"});
 
 
   /* Send the data using post */
@@ -329,7 +331,8 @@ $("#input").submit(function(event) {
 
   /* Put the results in a div */
   posting.done(function(data) {
-
+    $("input[type=submit]").removeAttr("disabled");
+    $("input[type=submit]").css({"opacity":"1","cursor":"pointer"});
 
     $("#tabs-"+resultTab).empty().append(data);
 
