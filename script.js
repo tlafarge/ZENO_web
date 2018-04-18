@@ -133,14 +133,21 @@ function drawDisplay()
 
   for (var i = 0; i < lines.length; i++) {
     var numData=lines[i].match(/[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?/g);
-    if( lines[i].toLowerCase().indexOf("sphere") !== -1 && numData != null && numData.length == 4)
+
+    if( /^s(phere)?(\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?){4}\s*$/.test(lines[i].toLowerCase()) )
     {
       sphereDataCenter.push([parseFloat(numData[0]),parseFloat(numData[1]),parseFloat(numData[2])]);
       sphereDataRadius.push(parseFloat(numData[3]));
     }
-	if( lines[i].toLowerCase().indexOf("cuboid") !== -1 && numData != null && numData.length == 6)
+	  if( /^cuboid(\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?){6}\s*$/.test(lines[i].toLowerCase()))
     {
       cuboidData.push([parseFloat(numData[0]),parseFloat(numData[1]),parseFloat(numData[2]),parseFloat(numData[3]),parseFloat(numData[4]),parseFloat(numData[5])]);
+    }
+
+    if( /^cube(\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?){4}\s*$/.test(lines[i].toLowerCase()) && parseFloat(numData[3])>0)
+    {
+      offset = parseFloat(numData[3]);
+      cuboidData.push([parseFloat(numData[0]),parseFloat(numData[1]),parseFloat(numData[2]),parseFloat(numData[0])+offset,parseFloat(numData[1])+offset,parseFloat(numData[2])+offset]);
     }
   }
 

@@ -9,7 +9,7 @@
 
 	//variable containing the path to zeno executable
 
-	
+
 	$zeno = "/home/tlafarge/SharedWorkspace/zeno-master/cpp/src/zeno";
 
 
@@ -84,6 +84,12 @@
 		$bodFileArray = array();
 		$outputStrings = explode(PHP_EOL, $params["output1"]);
 		$outputOptStrings =array();
+		$geoWord = array(
+			"sphere",
+			"s",
+			"cuboid",
+			"cube"
+		);
 		$optWord = array(
 			"rlaunch",
 			"st",
@@ -93,18 +99,20 @@
 			"viscosity",
 			"bf"
 		);
+		$deniedWord = array(
+			"triangle",
+			"atom",
+			"hetatm",
+			"voxels"
+		);
+
+
 		foreach ($outputStrings as $outputLine)
 		{
 			$outputLine = trim(preg_replace('!\s+!', ' ', $outputLine));
 			$firstWord = strtolower(trim(explode(' ',$outputLine)[0]));
 
-			if($firstWord == 'sphere')
-			{
-				$outputLine=strtolower($outputLine);
-				$bodFileArray[]="{$outputLine}\r\n";
-			}
-
-			if($firstWord == 'cuboid')
+			if(in_array($firstWord, $geoWord, true))
 			{
 				$outputLine=strtolower($outputLine);
 				$bodFileArray[]="{$outputLine}\r\n";
@@ -113,6 +121,11 @@
 			if(	in_array($firstWord, $optWord, true))
 			{
 				$outputOptStrings[]=$outputLine;
+			}
+
+			if(	in_array($firstWord, $deniedWord, true))
+			{
+				echo "<pre>".strtoupper($firstWord)." is not supported by the web version of ZENO and will be ignored<br /></pre>";
 			}
 
 		}
@@ -289,10 +302,17 @@
 
 		echo "<br /><strong>Comand line:</strong> zeno {$cmdline}<br /><br />";
 
-		//Test the number of instances of zeno already running"
-		exec("pidof -x zeno",$pidZeno);
-		$pidZenoCount = preg_match_all('!\d+!', $pidZeno[0]);
-		if($pidZenoCount >= $maxZenocount)
+		//if we are not debuging Test the number of instances of zeno already running"
+		if(!$debug)
+		{
+			exec("pidof -x zeno",$pidZeno);
+			$pidZenoCount = preg_match_all('!\d+!', $pidZeno[0]);
+		}
+		else {
+			$pidZenoCount =0;
+		}
+
+		if($pidZenoCount >= $maxZenocount )
 			echo 'Too many ZENO instances already running on the server<br /> Wait for them to finish ('.$pidZenoCount.')<br />';
 		else {
 
