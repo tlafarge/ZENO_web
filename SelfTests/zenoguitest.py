@@ -59,6 +59,8 @@ def zenoGuiTest(
     for temp in bod_array:
         driver.find_element_by_id("output1").send_keys(temp)
         driver.find_element_by_id("output1").send_keys(Keys.RETURN)
+    driver.find_element_by_id("displayButton").click()
+
 
     if(extWalkType_in == 1):
         driver.find_element_by_xpath("(//input[@name='extRad'])[1]").click()

@@ -327,6 +327,44 @@ class TestZenoGui(unittest.TestCase):
                 driver = self.driver
         ))
 
+    def test_9(self):
+        self.assertTrue(zenoguitest.zenoGuiTest(
+                urlTest = self.urlTest,
+                nbTest = "9",
+                boldfile_in = "./inputs/test9.bod",
+                extWalkType_in = 1, #Radio button choice 1 2 3 or 4
+                nbWalk_in = "100000",
+                sdCap_in = "",
+                minNbWalkCap_in = "",
+                sdPol_in = "",
+                minNbWalkPol_in= "",
+
+                intWalkType_in = 1, #Radio button choice 1 2 or 3
+                nbSamples_in = "100000",
+                sdVol_in = "",
+                minNbSample_in = "",
+
+                hunits_in = "",
+                temp_in = "",
+                mass_in = "",
+                viscosity_in = "",
+                buoyancy_in = "",
+
+                hunitsType_in = "", # L,m,cm,nm,A
+                temperatureType_in = "", #C,K
+                massType_in = "", #Da,kDa,g,kg
+                viscosityType_in = "", # cp,p
+
+                seed_in = "27",
+                rlaunch_in = "",
+                skinT_in = "",
+                hitPoints_in = False,
+                ram_in = False,
+                surfacePoints_in = False,
+                interiorPoints_in = False,
+                driver = self.driver
+        ))
+
     @classmethod
     def tearDownClass(self):
         raw_input("Press Enter to continue, close browser and delete temp files...")
