@@ -1,0 +1,4 @@
+cuboid 0 0 0 1 1 1.01
+cuboid 2 2 2 3 3 4
+cuboid 0 0 0 -1 -1 -1.02
+cube   4 4 4 1
