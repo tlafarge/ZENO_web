@@ -10,7 +10,7 @@
 	//variable containing the path to zeno executable
 
 
-	$zeno = "/home/tlafarge/SharedWorkspace/zeno-master/cpp/src/zeno";
+	$zeno = "/home/tlafarge/gitlab/zeno/cpp/src/build/zeno";
 
 
 	//Max ZENO instances running at the same time
