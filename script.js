@@ -79,6 +79,16 @@ function handleDragOver(evt) {
   evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
 }
 
+function handleFileSelectStop(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+}
+
+function handleDragOverStop(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+  evt.dataTransfer.dropEffect = 'none'; // Explicitly show this is a copy.
+}
 // Setup the dnd listeners.
 var dropZone = document.getElementById('drop_zone');
 
@@ -86,10 +96,15 @@ $('#drop_zone').click(function(event) {
   $('#files').click();
 });
 
+document.body.addEventListener('dragover', handleDragOverStop, false);
+document.body.addEventListener('drop', handleFileSelectStop, false);
 dropZone.addEventListener('dragover', handleDragOver, false);
 dropZone.addEventListener('drop', handleFileSelect, false);
 document.getElementById('files').addEventListener('change', handleFileSelect2, false);
 
+var dropZoneText = document.getElementById('output1');
+dropZoneText.addEventListener('dragover', handleDragOver, false);
+dropZoneText.addEventListener('drop', handleFileSelect, false);
 
 function readBodFile(file) {
   var ext = (file.name).split('.').pop();

@@ -39,7 +39,7 @@
 							<fieldset  class="bodGroup" >
 								<legend>Required inputs</legend>
 								<div id="load">
-									<div id="drop_zone">Drop Obj file here or click to upload</div>
+									<div id="drop_zone">Drop BOD file here or click to upload</div>
 									<input type='file' title="No file selected" id="files" onchange="pressed()"><label id="fileLabel"> </label>
 								</div>
 
