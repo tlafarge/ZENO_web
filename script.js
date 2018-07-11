@@ -141,6 +141,16 @@ function drawDisplay()
   var lines = 	$('#output1').val();
 
   lines = lines.split(/\r\n|\r|\n/g);
+
+  if(lines.length > 1000){
+    confirmDraw =confirm("Drawing a complex object can take a while. Are you sure?");
+    if(!confirmDraw)
+    {
+      button.disabled = false;
+      return;
+    }
+  }
+
   var sphereDataCenter = [];
   var sphereDataRadius = [];
   var cuboidData = [];
