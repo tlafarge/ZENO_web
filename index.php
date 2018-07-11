@@ -49,12 +49,8 @@
 									<br/>
 									<textarea class='output'  name='output1' id='output1' height=51px ></textarea>
 									<br/>
-									<button id='displayButton' type="button" onclick=drawDisplay()>Update Object</button>
-									<label class="switch">
-									  <input type="checkbox" name="visual" id="visual"  value="1" checked>
-									  <span class="slider round"></span>
-									</label>
-									Visualization
+									<button id='displayButton' type="button" onclick=drawDisplay()>Visualize object</button>
+
 								</div>
 
 
