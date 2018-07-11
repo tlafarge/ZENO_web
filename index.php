@@ -50,6 +50,11 @@
 									<textarea class='output'  name='output1' id='output1' height=51px ></textarea>
 									<br/>
 									<button id='displayButton' type="button" onclick=drawDisplay()>Update Object</button>
+									<label class="switch">
+									  <input type="checkbox" name="visual" id="visual"  value="1" checked>
+									  <span class="slider round"></span>
+									</label>
+									Visualization
 								</div>
 
 
@@ -212,13 +217,29 @@
 								</table>
 								<div id="advParam2" style="display: none;">
 									<br/>
-									<label><input type="checkbox"  name="hitPoints" id="hitPoints" value="1" /> Print statistics related to counts of hit points </label>
+									<label class="switch">
+										<input type="checkbox"  name="hitPoints" id="hitPoints" value="1" />
+										<span class="slider round" id="hitPointsSpan"></span>
+									</label>
+									Print statistics related to counts of hit points
 									<br/>
-									<label><input type="checkbox"  name="ram" id="ram" value="1" /> Print detailed RAM and timing information</label>
+									<label class="switch">
+										<input type="checkbox"  name="ram" id="ram" value="1" />
+										<span class="slider round" id="ramSpan"></span>
+									</label>
+									Print detailed RAM and timing information
 									<br/>
-									<label><input type="checkbox"  name="surfacePoints" id="surfacePoints" value="1" /> Print surface points from exterior calculations to a file</label>
+									<label class="switch">
+										<input type="checkbox"  name="surfacePoints" id="surfacePoints" value="1" />
+										<span class="slider round" id="surfacePointsSpan"></span>
+									</label>
+									Print surface points from exterior calculations to a file
 									<br/>
-									<label><input type="checkbox"  name="interiorPoints" id="interiorPoints" value="1" /> Print interior sample points to a file</label>
+									<label class="switch">
+										<input type="checkbox"  name="interiorPoints" id="interiorPoints" value="1" />
+										<span class="slider round" id="interiorPointsSpan"></span>
+									</label>
+									Print interior sample points to a file
 								</div>
 
 

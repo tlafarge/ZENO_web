@@ -22,7 +22,7 @@ class TestZenoGui(unittest.TestCase):
     def setUpClass(self):
         self.driver = webdriver.Firefox()
        	#self.urlTest ="http://cavendish.nist.gov/zenoweb/"
-        self.urlTest ="http://stat.nist.gov/consensus/zeno/"
+        self.urlTest ="http://stat.nist.gov/zeno/"
 
 
 

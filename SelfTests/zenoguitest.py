@@ -133,16 +133,16 @@ def zenoGuiTest(
     driver.find_element_by_id("skinT").send_keys(skinT_in)
 
     if(hitPoints_in):
-        driver.find_element_by_id("hitPoints").click()
+        driver.find_element_by_id("hitPointsSpan").click()
 
     if(ram_in):
-        driver.find_element_by_id("ram").click()
+        driver.find_element_by_id("ramSpan").click()
 
     if(surfacePoints_in):
-        driver.find_element_by_id("surfacePoints").click()
+        driver.find_element_by_id("surfacePointsSpan").click()
 
     if(interiorPoints_in):
-        driver.find_element_by_id("interiorPoints").click()
+        driver.find_element_by_id("interiorPointsSpan").click()
 
     driver.find_element_by_xpath("//input[@value='Run the computation']").click()
 

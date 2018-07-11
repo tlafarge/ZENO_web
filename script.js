@@ -130,7 +130,8 @@ function readBodFile(file) {
 
 function loadData(lines) {
   $('#output1').val(lines);
-  drawDisplay();
+  if(  $('#visual').is(':checked'))
+    drawDisplay();
 }
 
 //Draw Molecule using 3dmol.js
