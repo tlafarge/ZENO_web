@@ -19,7 +19,7 @@
 			</div>
 			<div class="nist-header__title">
 				<h4 class="title" onClick="window.location.replace('./index.php');">Zeno Gui</h4>
-				<h5 class="title" onClick="window.location.replace('./index.php');">Version 0.1.0</h3>
+				<h5 class="title" onClick="window.location.replace('./index.php');">Version 1.0.0</h3>
 			</div>
 		</div>
 		<div class="content">
