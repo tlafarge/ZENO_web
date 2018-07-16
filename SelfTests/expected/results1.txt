@@ -1,35 +1,35 @@
-Start time: 2018-01-26 10:03:38
-RAM after initialization: 	    1316 kB
-RAM after loading input data: 	    1572 kB
-RAM after building spatial data structure: 	    1572 kB
-RAM after walk on spheres: 	    7648 kB
-RAM after interior samples: 	   17720 kB
+Start time: 2018-07-16 12:01:35
+RAM after initialization (kB): 1344
+RAM after loading input data (kB): 1600
+RAM after building spatial data structure (kB): 1600
+RAM after walk on spheres (kB): 7688
+RAM after interior samples (kB): 17756
 
 Parameters
 ----------
 
-Input file: ./UserData/aca22f3d/input.bod
+Input file: ./UserData/fe7a995a/input.bod
 Number of nodes: 1
 Number of threads: 1
 Random number seed: 27
 Number of walks requested: 200000
 Number of interior samples requested: 200000
-Max run time: 200 s
-Skin thickness: 1e-06
-Launch center: < 1 , 1 , 1 >
-Launch radius: 1
-Length scale: 3 nm
-Temperature: 20 C
-Mass: 140 Da
-Solvent viscosity: 10 cp
-Buoyancy factor: 5
+Max run time: 200.000000 s
+Skin thickness: 0.000001
+Launch center: < 1.000000 , 1.000000 , 1.000000 >
+Launch radius: 1.000000
+Length scale: 3.000000 nm
+Temperature: 20.000000 C
+Mass: 140.000000 Da
+Solvent viscosity: 10.000000 cp
+Buoyancy factor: 5.000000
 
 Results
 -------
 
-Number of walks performed: 200000
+Number of walks performed (1): 200000
 
-Number of interior samples performed: 200000
+Number of interior samples performed (1): 200000
 
 Capacitance (nm): 3.000000e+00 +/- 0.000000e+00
 
@@ -38,6 +38,7 @@ Electric polarizability tensor (nm^3):
   -4.423302e-02 +/- 9.288000e-01 , 3.394727e+02 +/- 1.199523e+00 , -8.122779e-01 +/- 9.296051e-01 ,
   8.227606e-01 +/- 9.291684e-01 , -8.122779e-01 +/- 9.296051e-01 , 3.400190e+02 +/- 1.200283e+00 ]
 
+
 Eigenvalues of electric polarizability tensor (nm^3):
 < 3.383457e+02 +/- 1.265905e+00 , 3.392041e+02 +/- 1.257448e+00 , 3.408642e+02 +/- 1.260186e+00 >
 
@@ -45,7 +46,7 @@ Mean electric polarizability (nm^3): 3.394713e+02 +/- 6.925051e-01
 
 Hydrodynamic radius (nm): 3.000000e+00 +/- 3.000000e-02
 
-Prefactor for computing intrinsic viscosity: 8.333334e-01 +/- 1.250000e-02
+Prefactor for computing intrinsic viscosity (1): 8.333334e-01 +/- 1.250000e-02
 
 Viscometric radius (nm): 3.000529e+00 +/- 1.514075e-02
 
@@ -66,40 +67,44 @@ Gyration tensor (nm^2):
   4.260305e-03 +/- 1.835604e-02 , 1.807944e+00 +/- 2.587994e-02 , 4.168959e-05 +/- 1.834427e-02 ,
   4.551914e-03 +/- 1.834017e-02 , 4.168959e-05 +/- 1.834427e-02 , 1.798231e+00 +/- 2.581300e-02 ]
 
+
 Eigenvalues of gyration tensor (nm^2):
 < 1.794898e+00 +/- 1.992528e-02 , 1.803028e+00 +/- 2.203468e-02 , 1.810719e+00 +/- 3.362219e-02 >
 
-Intrinsic conductivity: 3.001586e+00 +/- 6.123089e-03
+Intrinsic conductivity (1): 3.001586e+00 +/- 6.123089e-03
 
-Intrinsic viscosity: 2.501322e+00 +/- 3.786520e-02
+Intrinsic viscosity (1): 2.501322e+00 +/- 3.786520e-02
 
 Counts:
 
-t: 1.000000e+00 +/- 0.000000e+00
+t (1): 1.000000e+00 +/- 0.000000e+00
 
-u: < 1.000000e-04 +/- 1.581143e-03 , 7.900000e-04 +/- 1.581142e-03 , -1.700000e-04 +/- 1.581143e-03 >
+u (1):
+< 1.000000e-04 +/- 1.581143e-03 , 7.900000e-04 +/- 1.581142e-03 , -1.700000e-04 +/- 1.581143e-03 >
 
-v:
+v (nm):
 [ -3.767077e-05 +/- 1.177506e-03 , 3.309123e-04 +/- 1.291061e-03 , -5.544215e-04 +/- 1.292086e-03 ,
   -3.767077e-05 +/- 1.289843e-03 , 3.309123e-04 +/- 1.178458e-03 , -5.544215e-04 +/- 1.292085e-03 ,
   -3.767077e-05 +/- 1.289843e-03 , 3.309123e-04 +/- 1.291061e-03 , -5.544215e-04 +/- 1.179203e-03 ]
 
-w:
+
+w (nm):
 [ 3.329702e-01 +/- 1.177506e-03 , -2.641008e-04 +/- 1.291061e-03 , 1.170619e-03 +/- 1.292086e-03 ,
   1.771917e-04 +/- 1.289843e-03 , 3.335111e-01 +/- 1.178458e-03 , -1.598571e-03 +/- 1.292085e-03 ,
   4.459549e-04 +/- 1.289843e-03 , 2.051754e-06 +/- 1.291061e-03 , 3.340477e-01 +/- 1.179203e-03 ]
 
-Interior hits: 2.000000e+05 +/- 0.000000e+00
 
-Initialize (s):      0.003175
-Read (s):            0.000222
-Broadcast (s):       0.000001
-Preprocess (s):      0.000077
-Exterior Walk (s):   0.311982
+Interior hits (1): 2.000000e+05 +/- 0.000000e+00
+
+Initialize      (s): 0.003200
+Read            (s): 0.000239
+Broadcast       (s): 0.000001
+Preprocess      (s): 0.000088
+Exterior Walk   (s): 0.274893
 Exterior Reduce (s): 0.000002
-Volume Sample (s):   0.196960
-Volume Reduce (s):   0.000002
+Volume Sample   (s): 0.190338
+Volume Reduce   (s): 0.000002
 
-Total Time (s): 2.389010
+Total Time (s): 2.403837
 
-End time: 2018-01-26 10:03:40
+End time: 2018-07-16 12:01:38

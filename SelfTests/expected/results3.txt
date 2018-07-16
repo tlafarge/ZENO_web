@@ -1,9 +1,9 @@
-Start time: 2018-01-26 10:03:49
+Start time: 2018-07-16 12:01:48
 
 Parameters
 ----------
 
-Input file: ./UserData/72785e29/input.bod
+Input file: ./UserData/cb3e0a0b/input.bod
 Number of nodes: 1
 Number of threads: 1
 Random number seed: 27
@@ -17,7 +17,7 @@ Length scale: 1 L
 Results
 -------
 
-Number of walks performed: 211008
+Number of walks performed (1): 211008
 
 Capacitance (L): 1.000000e+00 +/- 0.000000e+00
 
@@ -26,6 +26,7 @@ Electric polarizability tensor (L^3):
   9.461443e-03 +/- 3.349132e-02 , 1.257748e+01 +/- 4.324815e-02 , -2.694081e-02 +/- 3.351867e-02 ,
   4.933023e-03 +/- 3.350437e-02 , -2.694081e-02 +/- 3.351867e-02 , 1.258413e+01 +/- 4.328407e-02 ]
 
+
 Eigenvalues of electric polarizability tensor (L^3):
 < 1.253838e+01 +/- 4.526185e-02 , 1.256066e+01 +/- 4.604295e-02 , 1.260806e+01 +/- 4.536721e-02 >
 
@@ -33,10 +34,10 @@ Mean electric polarizability (L^3): 1.256903e+01 +/- 2.497194e-02
 
 Hydrodynamic radius (L): 1.000000e+00 +/- 1.000000e-02
 
-Prefactor for computing intrinsic viscosity: 8.333335e-01 +/- 1.250000e-02
+Prefactor for computing intrinsic viscosity (1): 8.333335e-01 +/- 1.250000e-02
 
 Viscometric radius (L): 1.000071e+00 +/- 5.044025e-03
 
-Total Time (s): 0.346816
+Total Time (s): 0.336162
 
-End time: 2018-01-26 10:03:50
+End time: 2018-07-16 12:01:49

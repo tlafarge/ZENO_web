@@ -1,9 +1,9 @@
-Start time: 2018-01-26 10:03:43
+Start time: 2018-07-16 12:01:42
 
 Parameters
 ----------
 
-Input file: ./UserData/9f745547/input.bod
+Input file: ./UserData/50c6ec6d/input.bod
 Number of nodes: 1
 Number of threads: 1
 Random number seed: 27
@@ -18,9 +18,9 @@ Length scale: 1 L
 Results
 -------
 
-Number of walks performed: 251065
+Number of walks performed (1): 251065
 
-Number of interior samples performed: 1924395
+Number of interior samples performed (1): 1924395
 
 Capacitance (L): 1.000593e+00 +/- 1.995757e-03
 
@@ -29,6 +29,7 @@ Electric polarizability tensor (L^3):
   6.883518e-02 +/- 8.711684e-02 , 1.276915e+01 +/- 1.218064e-01 , -7.227591e-02 +/- 8.703157e-02 ,
   2.704486e-02 +/- 8.708187e-02 , -7.227591e-02 +/- 8.703157e-02 , 1.258031e+01 +/- 1.217472e-01 ]
 
+
 Eigenvalues of electric polarizability tensor (L^3):
 < 1.231769e+01 +/- 1.221471e-01 , 1.256511e+01 +/- 1.220208e-01 , 1.280062e+01 +/- 1.220488e-01 >
 
@@ -36,7 +37,7 @@ Mean electric polarizability (L^3): 1.256114e+01 +/- 7.035736e-02
 
 Hydrodynamic radius (L): 1.000593e+00 +/- 1.020303e-02
 
-Prefactor for computing intrinsic viscosity: 8.333276e-01 +/- 1.249991e-02
+Prefactor for computing intrinsic viscosity (1): 8.333276e-01 +/- 1.249991e-02
 
 Viscometric radius (L): 9.998589e-01 +/- 5.336468e-03
 
@@ -49,13 +50,14 @@ Gyration tensor (L^2):
   -5.726306e-04 +/- 4.245025e-03 , 2.002529e-01 +/- 5.379448e-03 , 3.754843e-04 +/- 4.245809e-03 ,
   -1.052214e-04 +/- 4.250701e-03 , 3.754843e-04 +/- 4.245809e-03 , 1.994539e-01 +/- 5.392185e-03 ]
 
+
 Eigenvalues of gyration tensor (L^2):
 < 1.992868e-01 +/- 3.323049e-03 , 1.997795e-01 +/- 9.305688e-03 , 2.009173e-01 +/- 3.351915e-03 >
 
-Intrinsic conductivity: 3.006981e+00 +/- 1.779520e-02
+Intrinsic conductivity (1): 3.006981e+00 +/- 1.779520e-02
 
-Intrinsic viscosity: 2.505800e+00 +/- 4.040655e-02
+Intrinsic viscosity (1): 2.505800e+00 +/- 4.040655e-02
 
-Total Time (s): 2.762193
+Total Time (s): 2.786432
 
-End time: 2018-01-26 10:03:46
+End time: 2018-07-16 12:01:45
