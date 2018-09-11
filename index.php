@@ -14,7 +14,7 @@
 	<div class="nist-header">
 			<div class="nist-header__logo">
 						<a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-header__logo-link" rel="home">
-						  <img src="https://pages.nist.gov/nist-header-footer/images/svg/nist_logo_reverse.svg" onerror="this.src='https://pages.nist.gov/nist-header-footer/images/nist_logo_reverse.png'" alt="">
+						  <img src="./nist_logo_reverse.svg"  alt="">
 						</a>
 			</div>
 			<div class="nist-header__title">
