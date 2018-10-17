@@ -10,7 +10,7 @@ html, body{
 }
 
 body {
-	font-family: 'Lato', Times, 'Times New Roman', serif;
+	font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
 	font-size: 16px;
 	font-weight: 200;
 	margin-left:1cm;
@@ -99,6 +99,9 @@ input[type=file]{
 	cursor: pointer;
 	background-color: #ddd;
 }
+#drop_zone:hover {
+    background-color: #bbb;
+}
 #fileLabel{
 	visibility: hidden;
 }
@@ -122,7 +125,7 @@ input[type=file]{
 }
 
 #displayButton{
-	background-color: #4CAF50;
+	background-color: #2980B9;
 	color: white;
 	height: 1.7em;
 	margin-left: 40px;
@@ -135,16 +138,16 @@ input[type=file]{
 }
 
 #displayButton:hover {
-	background-color: #45a049;
+	background-color: #125179;
 }
 #displayButton:active {
-	background-color: #009049;
+	background-color: #083958;
 }
 
 
 input[type=submit] {
 	width: 100%;
-	background-color: #4CAF50;
+	background-color: #2980B9;
 	color: white;
 	height: 3em;
 	border: none;
@@ -154,10 +157,10 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-	background-color: #45a049;
+	background-color: #125179;
 }
 input[type=submit]:active {
-	background-color: #009049;
+	background-color: #083958;
 }
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
@@ -170,18 +173,21 @@ input[type=submit]:active {
 
 .tooltip .tooltiptext {
 	visibility: hidden;
-	width: 30vw;
-	background-color: black;
-	color: #fff;
-	text-align: center;
+	min-width: 20vw;
+  max-width: 30vw;
+	background-color: #bbb;
+	/*text-align: center;*/
 	border-radius: 6px;
-	padding: 5px 0;
+	padding: 5px 5px;
 	position: absolute;
 	z-index: 1;
 	top: 150%;
 	left: 50%;
 	margin-left: -60px;
+	vertical-align: super;
+	font-size: 90%;
 }
+
 
 
 .tooltip:hover .tooltiptext {
@@ -196,7 +202,7 @@ input[type=submit]:active {
 	margin-left: -5px;
 	border-width: 5px;
 	border-style: solid;
-	border-color: transparent transparent black transparent;
+	border-color: transparent transparent #bbb transparent;
 }
 
 .tooltip .tooltiptext {
@@ -233,7 +239,7 @@ arrowDiv {
 .loader {
 	border: 16px solid #f3f3f3;
 	border-radius: 50%;
-	border-top: 16px solid #4CAF50;
+	border-top: 16px solid #2980B9;
 	width: 80px;
 	height: 80px;
 	-webkit-animation: spin 2s linear infinite;
@@ -253,10 +259,7 @@ arrowDiv {
 	100% { transform: rotate(360deg); }
 }
 
-span{
-	vertical-align: super;
-	font-size: 70%;
-}
+
 .checkbox-grid li {
 	display: block;
 }
@@ -375,11 +378,11 @@ strong,a {
 }
 
 input:checked + .slider {
-	background-color: #4CAF50;
+	background-color: #2980B9;
 }
 
 input:focus + .slider {
-	box-shadow: 0 0 1px #4CAF50;
+	box-shadow: 0 0 1px #2980B9;
 }
 
 input:checked + .slider:before {

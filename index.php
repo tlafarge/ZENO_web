@@ -26,13 +26,9 @@
 
 			<div id="tabs">
 				<ul id="tabsul">
-					<li><a href="#tabs-1">About</a></li>
-					<li><a href="#tabs-2">App</a></li>
+					<li><a href="#tabs-1">App</a></li>
 				</ul>
 				<div id="tabs-1">
-
-				</div>
-				<div id="tabs-2">
 					<div id="form">
 						<form name="input" id="input"   action="validation.php"   >
 
@@ -44,8 +40,8 @@
 								</div>
 
 
-								<div id="bodArea">
-									Definition of object file:
+								<div id="bodArea" >
+									<span class="tooltip">Definition of object file &#9432;:<span class="tooltiptext">Supports inputs of the form: </br>sphere x y z r</br>cuboid x1 y1 z1 x2 y2 z2</br>cube x y z l </span></span>
 									<br/>
 									<textarea class='output'  name='output1' id='output1' height=51px ></textarea>
 									<br/>
@@ -133,7 +129,7 @@
 								<button id='clearOptButton' class="clear" type="button" onclick=clearOpt()>Clear</button>
 								<table id="optionalParam" style="width:50%; display: none;">
 									<tr>
-										<td  class="tooltip">Units for length: 		  <span class="tooltiptext">Choosing a conversion length of 10 cm means that a length of 1 (arbitrary units) in the input file is equivalent to 10cm. A non-arbitrary value is required for calculation of friction coefficien, diffusion coefficient and sedimentation coefficient</span> </td>
+										<td  class="tooltip">Units for length &#9432;: 		  <span class="tooltiptext">Choosing a conversion length of 10 cm means that a length of 1 (arbitrary units) in the input file is equivalent to 10cm.</br>A non-arbitrary value is required for calculation of friction coefficien, diffusion coefficient and sedimentation coefficient</span> </td>
 										<td><input name='hunits' id='hunits' type='text' value=''   ></td>
 										<td>
 											<select id="hunitsType" name="hunitsType">
@@ -147,7 +143,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="tooltip">Temperature:	  <span class="tooltiptext">Required for calculation of the diffusion coefficient</span> </td>
+										<td class="tooltip">Temperature &#9432;:	  <span class="tooltiptext">Required for calculation of the diffusion coefficient</span> </td>
 										<td><input name='temp' id='temp' type='text' value=''  ></td>
 										<td>
 											<select id="tempType" name="tempType">
@@ -157,7 +153,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="tooltip">Mass:	  <span class="tooltiptext">Required for calculation of the intrinsic viscosity with mass units and the sedimentation coefficient </span> </td>
+										<td class="tooltip">Mass &#9432;:	  <span class="tooltiptext">Required for calculation of the intrinsic viscosity with mass units and the sedimentation coefficient </span> </td>
 										<td><input name='mass' id='mass' type='text' value=''  ></td>
 										<td>
 											<select id="massType" name="massType">
@@ -169,7 +165,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="tooltip">Solvent Viscosity:	  <span class="tooltiptext">Required for calculation of the friction coefficient, the diffusion coefficient and the sedimentation coefficient </span> </td>
+										<td class="tooltip">Solvent Viscosity &#9432;:	  <span class="tooltiptext">Required for calculation of the friction coefficient, the diffusion coefficient and the sedimentation coefficient </span> </td>
 										<td><input name='viscosity' id='viscosity' type='text' value=''  ></td>
 										<td>
 											<select id="viscosityType" name="viscosityType">
@@ -179,7 +175,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="tooltip">Buoyancy factor:  	  <span class="tooltiptext">Required for calculation of the sedimentation coefficient </span> </td>
+										<td class="tooltip">Buoyancy factor &#9432;:  	  <span class="tooltiptext">Required for calculation of the sedimentation coefficient </span> </td>
 										<td><input name='buoyancy' id='buoyancy' type='text' value=''  ></td>
 										<td> </td>
 									</tr>

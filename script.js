@@ -23,7 +23,7 @@ colorRainbow=['#ff0000','#ff1a00','#ff2800','#ff3300','#ff3b00','#ff4300','#ff4a
 var seed = Math.floor((Math.random() * 100) + 1);
 $('#seed').val(seed.toString());
 var viewer = null;
-var resultTab=3;
+var resultTab=2;
 $('#container').css("height","2em");
 
 
@@ -311,7 +311,6 @@ function clearAdv()
 }
 
 
-$("#tabs-1").load("about.md.html");
 $( "#tabs" ).tabs();
 $("#tabs").tabs("option", "active", 1);
 $("#tabs").fadeIn(200);
@@ -333,7 +332,7 @@ $("#input").submit(function(event) {
   $('#tabs').append($(toInsert));
 
 
-  var toInsert=" <li><a href='#tabs-"+resultTab+"'>results "+(resultTab-2)+"</a><span class='ui-closable-tab'>&#10006;</span></li> ";
+  var toInsert=" <li><a href='#tabs-"+resultTab+"'>Results "+(resultTab-1)+"</a><span class='ui-closable-tab'>&#10006;</span></li> ";
   $('#tabsul').append($(toInsert));
 
   $( "#tabs" ).tabs("refresh");

@@ -23,7 +23,7 @@
 	{
 		while (false !== ($file = readdir($handle)))
 		{
-			if($file!="." && $file!="..")
+			if($file!="." && $file!=".." && $file!=".gitignore")
 			{
 				$filelastmodified = filemtime("$UserData/$file");
 				if((time() - $filelastmodified) > 600)
