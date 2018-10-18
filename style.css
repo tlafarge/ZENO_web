@@ -47,11 +47,23 @@ fieldset {border:2px solid #bbb;
 	padding:15px;
 	padding-top:5px;
 	min-width: 15em;
-
-
 }
 #form{ width: 100%; }
 
+a {
+	color: #2980B9;
+	text-decoration: none;
+}
+a:visited {
+  color: #9B59B6;
+}
+a:hover {
+  color: #3091d1;
+}
+
+strong {
+	font-weight: bold;
+}
 
 input[type=text], select {
 	margin: 8px 0;
@@ -332,11 +344,6 @@ arrowDiv {
 .clear:hover {
 	background-color: #E81010;
 }
-
-strong,a {
-	font-weight: bold;
-}
-
 
 
 /*Slider*/

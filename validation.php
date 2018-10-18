@@ -10,7 +10,7 @@
 	//variable containing the path to zeno executable
 
 	//$zeno = "echo";
-	$zeno = "/home/tlafarge/gitlab/zeno/cpp/src/build/zeno";
+	$zeno = "/home/tlafarge/gitlab/zeno2/cpp/src/zeno";
 
 
 	//Max ZENO instances running at the same time
