@@ -21,8 +21,10 @@ class TestZenoGui(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.driver = webdriver.Firefox()
-       	#self.urlTest ="https://zeno.nist.gov/zenoweb/"
+       	#self.urlTest ="http://cavendish.nist.gov/zenoweb/"
         self.urlTest ="http://stat.nist.gov/zeno/"
+
+
 
     def test_1(self):
         self.assertTrue(zenoguitest.zenoGuiTest(

@@ -1,32 +1,27 @@
 
 <?php
-	$debug=FALSE;
-	$autoClean=TRUE;
-	set_time_limit(200);
-
-	//variable containing the path to the User temporary data must mach the UserData in script.js
-	$UserData = "./UserData";
-
-	//variable containing the path to zeno executable
-
-	//$zeno = "echo";
-	$zeno = "/home/tlafarge/gitlab/zeno2/cpp/src/zeno";
 
 
-	//Max ZENO instances running at the same time
-	$maxZenocount = 2;
+if(file_exists ( 'config_custom.php' )){
+	require 'config_custom.php';
+}
+else{
+	require 'config.php';
+}
 
-	if (!empty($_POST))
-	{
+set_time_limit($PHP_TimeLimit);
+
+if (!empty($_POST))
+{
 	//Clean the UserData Folder
-	if ($autoClean && $handle = opendir($UserData))
+	if ($autoClean_TimeLimit != 0 && $handle = opendir($UserData))
 	{
 		while (false !== ($file = readdir($handle)))
 		{
 			if($file!="." && $file!=".." && $file!=".gitignore")
 			{
 				$filelastmodified = filemtime("$UserData/$file");
-				if((time() - $filelastmodified) > 600)
+				if((time() - $filelastmodified) > $autoClean_TimeLimit)
 				{
 					//echo " This file is going to be deleted $UserData/$file <br />";
 					if ($handle2 = opendir("$UserData/$file"))
@@ -251,7 +246,7 @@
 		var_dump($outputOptStrings);
 
 		file_put_contents ( "$folder/input.bod" , $bodFileArray );
-		$cmdline = ' --input-file='.$folder."/input.bod".' --num-threads=1'.' --max-run-time=200';
+		$cmdline = ' --input-file='.$folder."/input.bod".' --num-threads=1'.' --max-run-time='.$Zeno_TimeLimit;
 
 		if($params['extRad']=="nbWalk")
 		{
@@ -302,18 +297,17 @@
 
 		echo "<br /><strong>Comand line:</strong> zeno {$cmdline}<br /><br />";
 
-		//if we are not debuging Test the number of instances of zeno already running"
-		if(!$debug)
+		// Test the number of instances of zeno already running"
+		$pidZenoCount =0;
+		if( $maxZenocount!=0)
 		{
 			exec("pidof -x zeno",$pidZeno);
+			if( isset($pidZeno[0]))
 			$pidZenoCount = preg_match_all('!\d+!', $pidZeno[0]);
 		}
-		else {
-			$pidZenoCount =0;
-		}
 
-		if($pidZenoCount >= $maxZenocount )
-			echo 'Too many ZENO instances already running on the server<br /> Wait for them to finish ('.$pidZenoCount.')<br />';
+		if($maxZenocount!=0 && $pidZenoCount >= $maxZenocount )
+		echo 'Too many ZENO instances already running on the server<br /> Wait for them to finish ('.$pidZenoCount.')<br />';
 		else {
 
 			//run Zeno with the valid command line
@@ -425,4 +419,4 @@
 		echo 'POST file error, no DATA was provided';
 	}
 
-?>
+	?>

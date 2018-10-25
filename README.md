@@ -131,3 +131,30 @@ take the following units:
 ##### Buoyancy factor
 Specify the buoyancy factor, which is used for computing the sedimentation
 coefficient.
+
+## Configuration of ZENO web
+
+All the settings of the web interface are in the file `config.php`
+
+    //Options
+    $debug=FALSE;
+
+    //PHP time computation limit
+    $PHP_TimeLimit = 200;
+
+    //ZENO time computation limit
+    $Zeno_TimeLimit = 195;
+
+    //Seconds Before USER data files being removed, set 0 to conserve data
+    $autoClean_TimeLimit=600;
+
+    //variable containing the path to the User temporary data
+    $UserData = "./UserData";
+
+    //variable containing the path to zeno executable
+    $zeno = "zeno";
+
+    //Max ZENO instances running at the same time (0 for unlimited)
+    $maxZenocount = 2;
+
+To be able to conserve the modified settings while still being able to pull the last version from git it is possible to create a local copy of the file name `config_custom.php`, it will have priority over `config.php`.
