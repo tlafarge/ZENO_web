@@ -50,8 +50,7 @@ def zenoGuiTest(
         driver = ""
 ):
     driver.get(urlTest)
-    script = 'document.styleSheets[0].insertRule(".tooltip:hover .tooltiptext {visibility: visible;;}", 0 )' 
-    driver.execute_script(script)
+    driver.execute_script("$('<style type=\"text/css\">.tooltip:hover .tooltiptext {visibility: hidden;}</style>').appendTo('html > head');");
     success = False
     file_object  = open(boldfile_in, "r")
     bod_text = file_object.read()
