@@ -8,7 +8,7 @@
 	<link href="library/jquery-ui.min.css" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
 	<link rel="shortcut icon" href="favicon.ico">
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 	<style id="antiClickjack">body{display:none !important;}</style>
 </head>
 <body>

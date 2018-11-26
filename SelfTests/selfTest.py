@@ -14,6 +14,7 @@ import datetime
 import os
 import unittest
 import zenoguitest
+import glob
 
 
 class TestZenoGui(unittest.TestCase):
@@ -371,7 +372,7 @@ class TestZenoGui(unittest.TestCase):
     def tearDownClass(self):
         raw_input("Press Enter to continue, close browser and delete temp files...")
         self.driver.quit()
-        map( os.unlink, (os.path.join( "./outputs",f) for f in os.listdir("./outputs")) )
+        map( os.unlink,  glob.glob(os.path.join('./outputs', '*')) )
         print("Output files Removed!")
 
 
