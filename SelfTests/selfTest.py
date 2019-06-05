@@ -23,7 +23,8 @@ class TestZenoGui(unittest.TestCase):
     def setUpClass(self):
         self.driver = webdriver.Firefox()
        	#self.urlTest ="http://cavendish.nist.gov/zenoweb/"
-        self.urlTest ="http://stat.nist.gov/zeno/"
+        #self.urlTest ="http://stat.nist.gov/zeno/"
+        self.urlTest ="https://zeno.nist.gov/zenoweb"
 
 
 
@@ -370,9 +371,12 @@ class TestZenoGui(unittest.TestCase):
 
     @classmethod
     def tearDownClass(self):
-        raw_input("Press Enter to continue, close browser and delete temp files...")
+        input("Press Enter to continue, close browser and delete temp files...")
         self.driver.quit()
-        map( os.unlink,  glob.glob(os.path.join('./outputs', '*')) )
+        for f in glob.glob(os.path.join('./outputs', '*')):
+            os.unlink(f)
+        if os.path.exists("./geckodriver.log"):
+            os.unlink("./geckodriver.log")
         print("Output files Removed!")
 
 
